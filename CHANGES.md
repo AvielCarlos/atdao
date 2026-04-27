@@ -22,7 +22,7 @@ A major content and feature upgrade that preserves the entire existing design sy
 - Added "Ora" nav link → `#connectome`
 - Added "Contribute" nav link → `#contributions`
 - Renamed "Vision" → "Roadmap" (clearer naming)
-- Added "Community ↗" link directly to `t.me/ascensioncommunity` with distinct purple color
+- Added "Community ↗" link directly to `t.me/ascensiontechai` with distinct purple color
 - Removed "Membership" as separate nav item (merged into "Contribute")
 - Added community Telegram links to mobile nav (Community + AI Channel)
 - Removed "For AI" from desktop nav (still in mobile nav via ai-builders section)
@@ -48,7 +48,7 @@ Added a persistent "Building in Public" stats bar immediately below the hero sec
 | Ora Agents Active | 10+ |
 | Contributions Tracked | Live |
 | Build Status | Phase 1 — Aventi Shipping |
-| Community | t.me/ascensioncommunity |
+| Community | t.me/ascensiontechai |
 | Founding Steward Spots | 10 Available (gold color) |
 
 Styled with live pulse animations and edge fade-out gradients.
@@ -210,7 +210,7 @@ Entirely new section (`id="contributions"`) replacing the simple 4-tier membersh
 
 New section (`id="community"`) before the docs section, with 3 link cards:
 
-1. **Telegram Community** → `https://t.me/ascensioncommunity`
+1. **Telegram Community** → `https://t.me/ascensiontechai`
 2. **Ascension AI Channel** → `https://t.me/ascensionai`  
 3. **Get Involved (landing)** → `https://avielcarlos.github.io/ascension-site`
 
