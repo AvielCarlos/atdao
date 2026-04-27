@@ -1,0 +1,3324 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ascension Technologies DAO — AI-Built. Human-Verified. Open to All.</title>
+<meta name="description" content="An open-source non-profit DAO where AI agents build the future of human experience — and the global community votes to shape it.">
+<meta property="og:title" content="Ascension Technologies DAO — AI-Built. Human-Verified. Open to All.">
+<meta property="og:description" content="An open-source non-profit DAO where AI agents build the future of human experience — and the global community votes to shape it.">
+<meta property="og:type" content="website">
+
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600,700&display=swap" rel="stylesheet">
+
+<style>
+/* ========== DESIGN TOKENS ========== */
+:root {
+  --text-xs:   clamp(0.75rem,  0.7rem  + 0.25vw, 0.875rem);
+  --text-sm:   clamp(0.875rem, 0.8rem  + 0.35vw, 1rem);
+  --text-base: clamp(1rem,     0.95rem + 0.25vw, 1.125rem);
+  --text-lg:   clamp(1.125rem, 1rem    + 0.75vw, 1.5rem);
+  --text-xl:   clamp(1.5rem,   1.2rem  + 1.25vw, 2.25rem);
+  --text-2xl:  clamp(2rem,     1.2rem  + 2.5vw,  3.5rem);
+  --text-3xl:  clamp(2.5rem,   1rem    + 4vw,    5rem);
+
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-5:  1.25rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --space-32: 8rem;
+
+  --radius-sm: 0.375rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-full: 9999px;
+
+  --transition-interactive: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+
+  --content-narrow: 640px;
+  --content-default: 960px;
+  --content-wide: 1200px;
+
+  --font-body: 'General Sans', 'Helvetica Neue', Arial, sans-serif;
+  --font-display: 'General Sans', 'Helvetica Neue', Arial, sans-serif;
+
+  /* Domain Colors */
+  --color-aventi: #FF6B8A;
+  --color-aventi-glow: rgba(255, 107, 138, 0.15);
+  --color-aventi-glow-strong: rgba(255, 107, 138, 0.25);
+  --color-ivive: #00D4AA;
+  --color-ivive-glow: rgba(0, 212, 170, 0.15);
+  --color-ivive-glow-strong: rgba(0, 212, 170, 0.25);
+  --color-eviva: #6C63FF;
+  --color-eviva-glow: rgba(108, 99, 255, 0.15);
+  --color-eviva-glow-strong: rgba(108, 99, 255, 0.25);
+  --color-rest: #94A3B8;
+  --color-rest-glow: rgba(148, 163, 184, 0.1);
+
+  /* Connectome / Ora Colors */
+  --color-connectome: #A855F7;
+  --color-connectome-glow: rgba(168, 85, 247, 0.15);
+  --color-connectome-glow-strong: rgba(168, 85, 247, 0.25);
+  --color-ora: #F59E0B;
+  --color-ora-glow: rgba(245, 158, 11, 0.15);
+  --color-ora-glow-strong: rgba(245, 158, 11, 0.25);
+}
+
+/* ========== DARK THEME (DEFAULT) ========== */
+:root, [data-theme="dark"] {
+  --color-bg: #0a0a0f;
+  --color-surface: #0d1117;
+  --color-surface-2: #111827;
+  --color-surface-3: #161b2e;
+  --color-border: #1e293b;
+  --color-border-bright: #2d3a50;
+  --color-text: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --color-text-faint: #475569;
+  --color-accent: #00d4aa;
+  --color-accent-bright: #0ee6b7;
+  --color-accent-dim: #06b6d4;
+  --color-accent-glow: rgba(0, 212, 170, 0.15);
+  --color-accent-glow-strong: rgba(0, 212, 170, 0.25);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.4);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.5);
+  --glass-bg: rgba(13, 17, 23, 0.7);
+  --glass-border: rgba(255,255,255,0.06);
+}
+
+/* ========== LIGHT THEME ========== */
+[data-theme="light"] {
+  --color-bg: #f8fafc;
+  --color-surface: #ffffff;
+  --color-surface-2: #f1f5f9;
+  --color-surface-3: #e2e8f0;
+  --color-border: #cbd5e1;
+  --color-border-bright: #94a3b8;
+  --color-text: #0f172a;
+  --color-text-muted: #475569;
+  --color-text-faint: #94a3b8;
+  --color-accent: #0d9488;
+  --color-accent-bright: #0f766e;
+  --color-accent-dim: #0891b2;
+  --color-accent-glow: rgba(13, 148, 136, 0.1);
+  --color-accent-glow-strong: rgba(13, 148, 136, 0.2);
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
+  --shadow-md: 0 4px 16px rgba(0,0,0,0.1);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.15);
+  --glass-bg: rgba(255,255,255,0.8);
+  --glass-border: rgba(0,0,0,0.08);
+}
+
+/* ========== BASE RESET ========== */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  min-height: 100dvh;
+  line-height: 1.6;
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  overflow-x: hidden;
+}
+
+img, picture, video, canvas, svg { display: block; max-width: 100%; height: auto; }
+h1, h2, h3, h4, h5, h6 { text-wrap: balance; line-height: 1.15; }
+p, li, figcaption { text-wrap: pretty; max-width: 72ch; }
+button { cursor: pointer; background: none; border: none; font: inherit; color: inherit; }
+a { color: var(--color-accent); text-decoration: none; transition: color var(--transition-interactive); }
+a:hover { color: var(--color-accent-bright); }
+table { border-collapse: collapse; width: 100%; }
+
+::selection {
+  background: var(--color-accent-glow-strong);
+  color: var(--color-text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border-width: 0;
+}
+
+/* ========== LAYOUT ========== */
+.container {
+  width: 100%;
+  max-width: var(--content-wide);
+  margin: 0 auto;
+  padding-inline: var(--space-6);
+}
+
+.section {
+  padding-block: clamp(var(--space-16), 8vw, var(--space-32));
+}
+
+.section-label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: var(--space-4);
+}
+
+.section-title {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+  letter-spacing: -0.02em;
+}
+
+.section-subtitle {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  max-width: 60ch;
+  line-height: 1.7;
+}
+
+/* ========== ANIMATED GRADIENT BORDER ========== */
+@property --gradient-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.gradient-border {
+  position: relative;
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  padding: 1px;
+  background: linear-gradient(
+    var(--gradient-angle),
+    var(--color-accent),
+    var(--color-accent-dim),
+    transparent,
+    transparent,
+    var(--color-accent)
+  );
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation: rotate-gradient 4s linear infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes rotate-gradient {
+  to { --gradient-angle: 360deg; }
+}
+
+/* ========== SCROLL ANIMATIONS ========== */
+.reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ========== NAV ========== */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--glass-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--glass-border);
+  transition: transform 0.3s var(--ease-out), box-shadow 0.3s var(--ease-out);
+}
+
+.nav--scrolled {
+  box-shadow: var(--shadow-md);
+}
+
+.nav__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 4rem;
+  max-width: var(--content-wide);
+  margin: 0 auto;
+  padding-inline: var(--space-6);
+}
+
+.nav__logo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  color: var(--color-text);
+  font-weight: 700;
+  font-size: var(--text-sm);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.nav__logo svg {
+  width: 32px;
+  height: 32px;
+}
+
+.nav__links {
+  display: none;
+  list-style: none;
+  gap: var(--space-5);
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .nav__links { display: flex; }
+}
+
+.nav__links a {
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: color var(--transition-interactive);
+}
+
+.nav__links a:hover {
+  color: var(--color-accent);
+}
+
+.nav__links a.nav__link--community {
+  color: var(--color-connectome);
+}
+
+.nav__links a.nav__link--community:hover {
+  color: var(--color-ora);
+}
+
+.nav__right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.theme-toggle {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-md);
+  color: var(--color-text-muted);
+  transition: color var(--transition-interactive), background var(--transition-interactive);
+}
+
+.theme-toggle:hover {
+  color: var(--color-text);
+  background: var(--color-accent-glow);
+}
+
+.mobile-menu-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  color: var(--color-text-muted);
+}
+
+@media (min-width: 900px) {
+  .mobile-menu-btn { display: none; }
+}
+
+/* Mobile menu */
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 4rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--color-bg);
+  z-index: 99;
+  padding: var(--space-8) var(--space-6);
+  overflow-y: auto;
+}
+
+.mobile-nav.open { display: flex; flex-direction: column; gap: var(--space-4); }
+
+.mobile-nav a {
+  display: block;
+  padding: var(--space-3) 0;
+  font-size: var(--text-lg);
+  font-weight: 500;
+  color: var(--color-text-muted);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mobile-nav a:hover { color: var(--color-accent); }
+
+/* ========== BUTTONS ========== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-6);
+  font-size: var(--text-sm);
+  font-weight: 600;
+  border-radius: var(--radius-md);
+  transition: all var(--transition-interactive);
+  white-space: nowrap;
+}
+
+.btn--primary {
+  background: var(--color-accent);
+  color: #0a0a0f;
+}
+
+.btn--primary:hover {
+  background: var(--color-accent-bright);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px var(--color-accent-glow-strong);
+}
+
+.btn--secondary {
+  background: transparent;
+  color: var(--color-accent);
+  border: 1px solid var(--color-accent);
+}
+
+.btn--secondary:hover {
+  background: var(--color-accent-glow);
+  transform: translateY(-1px);
+}
+
+.btn--community {
+  background: var(--color-connectome-glow);
+  color: var(--color-connectome);
+  border: 1px solid var(--color-connectome);
+}
+
+.btn--community:hover {
+  background: var(--color-connectome-glow-strong);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px var(--color-connectome-glow);
+  color: var(--color-connectome);
+}
+
+/* ========== HERO ========== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__mesh {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(ellipse 80% 60% at 50% 40%, rgba(0, 212, 170, 0.12) 0%, transparent 70%),
+    radial-gradient(ellipse 60% 50% at 20% 60%, rgba(6, 182, 212, 0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 80% 30%, rgba(168, 85, 247, 0.06) 0%, transparent 60%);
+  animation: mesh-float 12s ease-in-out infinite alternate;
+}
+
+@keyframes mesh-float {
+  0% { transform: scale(1) translate(0, 0); }
+  100% { transform: scale(1.05) translate(-1%, 2%); }
+}
+
+.hero__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(0, 212, 170, 0.15) 1px, transparent 0);
+  background-size: 60px 60px;
+  opacity: 0.4;
+}
+
+.hero__nodes {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.node {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: var(--color-accent);
+  border-radius: 50%;
+  opacity: 0;
+  animation: node-pulse 4s ease-in-out infinite;
+}
+
+@keyframes node-pulse {
+  0%, 100% { opacity: 0; transform: scale(0.5); }
+  50% { opacity: 0.6; transform: scale(1); }
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: var(--space-8);
+  max-width: 800px;
+}
+
+.hero__logo {
+  display: inline-block;
+  margin-bottom: var(--space-8);
+}
+
+.hero__logo svg {
+  width: clamp(260px, 50vw, 520px);
+  height: auto;
+}
+
+.hero__tagline {
+  font-size: var(--text-xl);
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-bottom: var(--space-4);
+  letter-spacing: 0.02em;
+}
+
+.hero__subtitle {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  max-width: 56ch;
+  margin: 0 auto var(--space-8);
+  line-height: 1.7;
+}
+
+.hero__ctas {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ========== LIVE METRICS BAR ========== */
+.metrics-bar {
+  background: var(--color-surface);
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+  padding: var(--space-4) 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.metrics-bar::before,
+.metrics-bar::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 60px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.metrics-bar::before {
+  left: 0;
+  background: linear-gradient(90deg, var(--color-surface), transparent);
+}
+
+.metrics-bar::after {
+  right: 0;
+  background: linear-gradient(270deg, var(--color-surface), transparent);
+}
+
+.metrics-bar__label {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  white-space: nowrap;
+  padding: 0 var(--space-6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+}
+
+.metrics-bar__grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  flex-wrap: wrap;
+  max-width: var(--content-wide);
+  margin: 0 auto;
+  padding-inline: var(--space-6);
+}
+
+.metric-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-5);
+  border-right: 1px solid var(--color-border);
+  flex-shrink: 0;
+}
+
+.metric-item:last-child {
+  border-right: none;
+}
+
+.metric-item__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  animation: pulse-dot 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 rgba(0, 212, 170, 0.4); }
+  50% { opacity: 0.8; transform: scale(1.1); box-shadow: 0 0 0 4px rgba(0, 212, 170, 0); }
+}
+
+.metric-item__value {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text);
+  white-space: nowrap;
+}
+
+.metric-item__label {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.metric-item--founding .metric-item__dot {
+  background: var(--color-ora);
+  animation: pulse-dot-gold 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot-gold {
+  0%, 100% { opacity: 1; transform: scale(1); box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.4); }
+  50% { opacity: 0.8; transform: scale(1.1); box-shadow: 0 0 0 4px rgba(245, 158, 11, 0); }
+}
+
+.metric-item--founding .metric-item__value {
+  color: var(--color-ora);
+}
+
+/* ========== DOMAINS SECTION ========== */
+.domains {
+  padding-block: clamp(var(--space-16), 8vw, var(--space-32));
+  position: relative;
+  overflow: hidden;
+}
+
+.domains::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 800px;
+  background: radial-gradient(circle, rgba(0,212,170,0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.domains__header {
+  text-align: center;
+  margin-bottom: clamp(var(--space-10), 4vw, var(--space-16));
+}
+
+.domains__title {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+  letter-spacing: -0.02em;
+}
+
+.domains__subtitle {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  max-width: 64ch;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.domains__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+@media (min-width: 900px) {
+  .domains__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.domain-card {
+  position: relative;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 0;
+  overflow: hidden;
+  transition: transform 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out), border-color 0.35s var(--ease-out);
+}
+
+.domain-card:hover {
+  transform: translateY(-4px);
+}
+
+.domain-card--aventi:hover {
+  border-color: var(--color-aventi);
+  box-shadow: 0 8px 40px var(--color-aventi-glow), 0 0 80px var(--color-aventi-glow);
+}
+
+.domain-card--ivive:hover {
+  border-color: var(--color-ivive);
+  box-shadow: 0 8px 40px var(--color-ivive-glow), 0 0 80px var(--color-ivive-glow);
+}
+
+.domain-card--eviva:hover {
+  border-color: var(--color-eviva);
+  box-shadow: 0 8px 40px var(--color-eviva-glow), 0 0 80px var(--color-eviva-glow);
+}
+
+.domain-card__accent {
+  height: 4px;
+  width: 100%;
+}
+
+.domain-card--aventi .domain-card__accent {
+  background: linear-gradient(90deg, var(--color-aventi), #FF8FA5, var(--color-aventi));
+}
+
+.domain-card--ivive .domain-card__accent {
+  background: linear-gradient(90deg, var(--color-ivive), #2EECC4, var(--color-ivive));
+}
+
+.domain-card--eviva .domain-card__accent {
+  background: linear-gradient(90deg, var(--color-eviva), #8B83FF, var(--color-eviva));
+}
+
+.domain-card__body {
+  padding: var(--space-6) var(--space-6) var(--space-8);
+}
+
+.domain-card__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-5);
+}
+
+.domain-card--aventi .domain-card__icon { background: var(--color-aventi-glow-strong); color: var(--color-aventi); }
+.domain-card--ivive .domain-card__icon { background: var(--color-ivive-glow-strong); color: var(--color-ivive); }
+.domain-card--eviva .domain-card__icon { background: var(--color-eviva-glow-strong); color: var(--color-eviva); }
+
+.domain-card__icon svg { width: 28px; height: 28px; }
+
+.domain-card__name {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-2);
+  letter-spacing: -0.01em;
+}
+
+.domain-card__tagline {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  margin-bottom: var(--space-4);
+  font-style: italic;
+}
+
+.domain-card--aventi .domain-card__tagline { color: var(--color-aventi); }
+.domain-card--ivive .domain-card__tagline { color: var(--color-ivive); }
+.domain-card--eviva .domain-card__tagline { color: var(--color-eviva); }
+
+.domain-card__status {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  margin-bottom: var(--space-4);
+}
+
+.domain-card__status--live {
+  background: rgba(0, 212, 170, 0.12);
+  color: var(--color-accent);
+  border: 1px solid rgba(0, 212, 170, 0.3);
+}
+
+.domain-card__status--live::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  animation: pulse-dot 2s infinite;
+}
+
+.domain-card__status--building {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--color-ora);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.domain-card__status--building::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-ora);
+}
+
+.domain-card__status--planned {
+  background: rgba(148, 163, 184, 0.08);
+  color: var(--color-text-muted);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.domain-card__status--planned::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-text-muted);
+}
+
+.domain-card__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--space-5);
+}
+
+.domain-card__features {
+  list-style: none;
+}
+
+.domain-card__features li {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  padding: var(--space-1) 0;
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  line-height: 1.5;
+}
+
+.domain-card__features li svg { width: 16px; height: 16px; flex-shrink: 0; }
+.domain-card--aventi .domain-card__features li svg { color: var(--color-aventi); }
+.domain-card--ivive .domain-card__features li svg { color: var(--color-ivive); }
+.domain-card--eviva .domain-card__features li svg { color: var(--color-eviva); }
+
+/* REST domain card */
+.domain-rest {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  transition: border-color 0.35s var(--ease-out), box-shadow 0.35s var(--ease-out);
+}
+
+.domain-rest:hover {
+  border-color: var(--color-rest);
+  box-shadow: 0 4px 20px var(--color-rest-glow);
+}
+
+.domain-rest__accent {
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-rest), transparent);
+}
+
+.domain-rest__body {
+  padding: var(--space-5) var(--space-6);
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.domain-rest__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-rest-glow);
+  color: var(--color-rest);
+  flex-shrink: 0;
+}
+
+.domain-rest__icon svg { width: 22px; height: 22px; }
+
+.domain-rest__content { flex: 1; min-width: 250px; }
+
+.domain-rest__name {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-1);
+}
+
+.domain-rest__tagline {
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-rest);
+  font-style: italic;
+  margin-bottom: var(--space-2);
+}
+
+.domain-rest__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  max-width: 72ch;
+}
+
+.domains__connector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--space-3) 0;
+}
+
+.domains__connector svg { width: 24px; height: 24px; color: var(--color-text-faint); }
+
+/* ========== CONNECTOME / ORA SECTION ========== */
+.connectome {
+  padding-block: clamp(var(--space-16), 8vw, var(--space-32));
+  position: relative;
+  overflow: hidden;
+}
+
+.connectome::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1000px;
+  height: 600px;
+  background:
+    radial-gradient(ellipse at 30% 50%, rgba(168, 85, 247, 0.06) 0%, transparent 60%),
+    radial-gradient(ellipse at 70% 50%, rgba(245, 158, 11, 0.04) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.connectome__header {
+  text-align: center;
+  margin-bottom: clamp(var(--space-10), 4vw, var(--space-16));
+}
+
+.connectome__section-label {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-connectome);
+  margin-bottom: var(--space-4);
+}
+
+.connectome__title {
+  font-size: var(--text-2xl);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+  letter-spacing: -0.02em;
+}
+
+.connectome__subtitle {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  max-width: 64ch;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+/* Ora intro card */
+.ora-hero {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  margin-bottom: var(--space-12);
+}
+
+@media (min-width: 900px) {
+  .ora-hero {
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+  }
+}
+
+.ora-hero__visual {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 280px;
+}
+
+.ora-brain {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ora-brain__core {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 40% 40%, var(--color-connectome), rgba(168, 85, 247, 0.3));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  animation: ora-pulse 3s ease-in-out infinite;
+  box-shadow: 0 0 30px var(--color-connectome-glow-strong), 0 0 60px var(--color-connectome-glow);
+}
+
+@keyframes ora-pulse {
+  0%, 100% { transform: scale(1); box-shadow: 0 0 30px var(--color-connectome-glow-strong), 0 0 60px var(--color-connectome-glow); }
+  50% { transform: scale(1.05); box-shadow: 0 0 50px var(--color-connectome-glow-strong), 0 0 100px var(--color-connectome-glow); }
+}
+
+.ora-brain__core-text {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.ora-brain__ring {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid var(--color-connectome-glow-strong);
+  animation: ora-ring 4s linear infinite;
+}
+
+.ora-brain__ring--1 { width: 120px; height: 120px; animation-delay: 0s; }
+.ora-brain__ring--2 { width: 160px; height: 160px; animation-delay: -1s; opacity: 0.6; }
+.ora-brain__ring--3 { width: 200px; height: 200px; animation-delay: -2s; opacity: 0.3; }
+
+@keyframes ora-ring {
+  0% { transform: scale(0.95) rotate(0deg); opacity: 0.5; }
+  50% { transform: scale(1.02) rotate(180deg); opacity: 1; }
+  100% { transform: scale(0.95) rotate(360deg); opacity: 0.5; }
+}
+
+/* Orbit agents */
+.ora-brain__agents {
+  position: absolute;
+  inset: -20px;
+}
+
+.ora-agent-dot {
+  position: absolute;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-connectome-glow-strong);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--color-connectome);
+  cursor: default;
+  transition: all var(--transition-interactive);
+  animation: orbit-float 6s ease-in-out infinite;
+}
+
+.ora-agent-dot:hover {
+  background: var(--color-connectome-glow-strong);
+  border-color: var(--color-connectome);
+  transform: scale(1.2);
+  z-index: 10;
+}
+
+@keyframes orbit-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+.ora-hero__content {
+  padding: var(--space-2);
+}
+
+.ora-hero__label {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-ora);
+  margin-bottom: var(--space-3);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.ora-hero__label::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-ora);
+  animation: pulse-dot-gold 2s infinite;
+}
+
+.ora-hero__name {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--color-text);
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-4);
+}
+
+.ora-hero__name span {
+  background: linear-gradient(135deg, var(--color-connectome), var(--color-ora));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.ora-hero__desc {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--space-6);
+}
+
+.ora-stat-row {
+  display: flex;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.ora-stat {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.ora-stat__num {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--color-connectome);
+}
+
+.ora-stat__label {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* Agent grid */
+.agents-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+  margin-bottom: var(--space-12);
+}
+
+@media (min-width: 640px) {
+  .agents-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .agents-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (min-width: 1100px) {
+  .agents-grid { grid-template-columns: repeat(6, 1fr); }
+}
+
+.agent-card {
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-interactive);
+  position: relative;
+  overflow: hidden;
+}
+
+.agent-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-connectome), var(--color-ora));
+  opacity: 0;
+  transition: opacity var(--transition-interactive);
+}
+
+.agent-card:hover {
+  border-color: var(--color-connectome);
+  box-shadow: 0 4px 20px var(--color-connectome-glow);
+  transform: translateY(-2px);
+}
+
+.agent-card:hover::before {
+  opacity: 1;
+}
+
+.agent-card__icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: var(--color-connectome-glow);
+  color: var(--color-connectome);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--space-3);
+}
+
+.agent-card__icon svg { width: 18px; height: 18px; }
+
+.agent-card__name {
+  font-size: var(--text-xs);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-1);
+  line-height: 1.3;
+}
+
+.agent-card__role {
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  line-height: 1.4;
+}
+
+/* Server-Driven UI panel */
+.sdui-panel {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  margin-bottom: var(--space-12);
+}
+
+@media (min-width: 900px) {
+  .sdui-panel { grid-template-columns: 1fr 1fr; align-items: start; }
+}
+
+.sdui-explain {
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.sdui-explain__title {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.sdui-explain__title svg { width: 22px; height: 22px; color: var(--color-connectome); }
+
+.sdui-explain__desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--space-5);
+}
+
+.sdui-flow {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.sdui-flow__step {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--color-surface-2);
+  border-radius: var(--radius-md);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+.sdui-flow__step svg { width: 14px; height: 14px; color: var(--color-connectome); flex-shrink: 0; }
+
+.sdui-flow__arrow {
+  display: flex;
+  justify-content: center;
+  color: var(--color-text-faint);
+  font-size: var(--text-xs);
+}
+
+.tech-stack {
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.tech-stack__title {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-5);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.tech-stack__title svg { width: 16px; height: 16px; color: var(--color-connectome); }
+
+.tech-stack__items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.tech-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.tech-item__name {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  min-width: 140px;
+}
+
+.tech-item__purpose {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  flex: 1;
+  text-align: right;
+}
+
+.tech-item__badge {
+  padding: 2px var(--space-2);
+  background: var(--color-connectome-glow);
+  color: var(--color-connectome);
+  border-radius: var(--radius-sm);
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+.connectome__cta {
+  text-align: center;
+  padding: var(--space-8);
+  background: var(--color-surface);
+  border: 1px solid var(--color-connectome-glow-strong);
+  border-radius: var(--radius-xl);
+  position: relative;
+  overflow: hidden;
+}
+
+.connectome__cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-connectome), var(--color-ora), var(--color-connectome));
+}
+
+.connectome__cta-title {
+  font-size: var(--text-lg);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-3);
+}
+
+.connectome__cta-desc {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-6);
+  max-width: 52ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ========== VISION SECTION ========== */
+.phase-cards {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-8);
+  margin-top: var(--space-10);
+}
+
+.phase-card {
+  padding: var(--space-8);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  transition: border-color var(--transition-interactive), box-shadow var(--transition-interactive);
+}
+
+.phase-card:hover {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 30px var(--color-accent-glow);
+}
+
+.phase-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-1) var(--space-3);
+  background: var(--color-accent-glow);
+  color: var(--color-accent);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  border-radius: var(--radius-full);
+  margin-bottom: var(--space-4);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.phase-card__badge .phase-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.phase-card__badge--live {
+  background: rgba(0, 212, 170, 0.12);
+  color: var(--color-accent);
+  border: 1px solid rgba(0, 212, 170, 0.3);
+}
+
+.phase-card__badge--building {
+  background: rgba(245, 158, 11, 0.1);
+  color: var(--color-ora);
+  border: 1px solid rgba(245, 158, 11, 0.25);
+}
+
+.phase-card__title {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  margin-bottom: var(--space-4);
+  color: var(--color-text);
+}
+
+.phase-card__desc {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-6);
+  line-height: 1.7;
+}
+
+.phase-card__columns {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+}
+
+@media (min-width: 640px) {
+  .phase-card__columns { grid-template-columns: 1fr 1fr; }
+}
+
+.role-box {
+  padding: var(--space-4);
+  background: var(--color-surface-2);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--color-border);
+}
+
+.role-box__title {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-accent);
+  margin-bottom: var(--space-2);
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.role-box__title svg { width: 16px; height: 16px; flex-shrink: 0; }
+
+.role-box__list {
+  list-style: none;
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.role-box__list li {
+  padding: var(--space-1) 0;
+  padding-left: var(--space-4);
+  position: relative;
+}
+
+.role-box__list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-border-bright);
+  transform: translateY(-50%);
+}
+
+.phase-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+
+.highlight-tag {
+  padding: var(--space-1) var(--space-3);
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+}
+
+/* ========== HOW IT WORKS (FLOW) ========== */
+.flow-diagram {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  margin-top: var(--space-10);
+  margin-bottom: var(--space-12);
+}
+
+@media (min-width: 768px) {
+  .flow-diagram { grid-template-columns: repeat(5, 1fr); gap: var(--space-4); }
+}
+
+.flow-step {
+  position: relative;
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  text-align: center;
+}
+
+.flow-step__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: var(--color-accent);
+  color: #0a0a0f;
+  font-size: var(--text-sm);
+  font-weight: 700;
+  border-radius: 50%;
+  margin-bottom: var(--space-3);
+}
+
+.flow-step__title { font-size: var(--text-sm); font-weight: 600; color: var(--color-text); margin-bottom: var(--space-2); }
+.flow-step__desc { font-size: var(--text-xs); color: var(--color-text-muted); line-height: 1.6; }
+
+@media (min-width: 768px) {
+  .flow-step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: -14px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-left: 8px solid var(--color-accent);
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    z-index: 2;
+  }
+}
+
+.vote-types {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 640px) { .vote-types { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .vote-types { grid-template-columns: repeat(3, 1fr); } }
+
+.vote-card {
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--transition-interactive);
+}
+
+.vote-card:hover { border-color: var(--color-accent); }
+
+.vote-card__icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent-glow);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-3);
+  color: var(--color-accent);
+}
+
+.vote-card__icon svg { width: 20px; height: 20px; }
+.vote-card__title { font-size: var(--text-sm); font-weight: 600; color: var(--color-text); margin-bottom: var(--space-2); }
+.vote-card__desc { font-size: var(--text-xs); color: var(--color-text-muted); line-height: 1.6; }
+
+/* ========== GOVERNANCE TABLE ========== */
+.gov-table-wrapper {
+  overflow-x: auto;
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-10);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.gov-table { width: 100%; min-width: 700px; font-size: var(--text-sm); }
+.gov-table thead { background: var(--color-surface-2); }
+
+.gov-table th {
+  padding: var(--space-4) var(--space-5);
+  text-align: left;
+  font-weight: 600;
+  color: var(--color-accent);
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.gov-table td {
+  padding: var(--space-3) var(--space-5);
+  border-bottom: 1px solid var(--color-border);
+  color: var(--color-text-muted);
+}
+
+.gov-table tbody tr:last-child td { border-bottom: none; }
+.gov-table tbody tr:hover { background: var(--color-accent-glow); }
+
+.gov-stack {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+  margin-bottom: var(--space-10);
+}
+
+@media (min-width: 640px) { .gov-stack { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .gov-stack { grid-template-columns: repeat(4, 1fr); } }
+
+.gov-stack__item {
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.gov-stack__icon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--color-accent-glow);
+  color: var(--color-accent);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-3);
+}
+
+.gov-stack__icon svg { width: 18px; height: 18px; }
+.gov-stack__title { font-size: var(--text-sm); font-weight: 600; color: var(--color-text); margin-bottom: var(--space-2); }
+.gov-stack__desc { font-size: var(--text-xs); color: var(--color-text-muted); line-height: 1.5; }
+
+.legal-path {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+
+.legal-step {
+  flex: 1;
+  min-width: 200px;
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  position: relative;
+}
+
+.legal-step__number { font-size: var(--text-xs); font-weight: 700; color: var(--color-accent); margin-bottom: var(--space-2); }
+.legal-step__title { font-size: var(--text-sm); font-weight: 600; color: var(--color-text); margin-bottom: var(--space-2); }
+.legal-step__desc { font-size: var(--text-xs); color: var(--color-text-muted); line-height: 1.5; }
+
+/* ========== CONTRIBUTIONS & MEMBERSHIP ========== */
+.contributions {
+  padding-block: clamp(var(--space-16), 8vw, var(--space-32));
+  position: relative;
+  overflow: hidden;
+}
+
+.contributions::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 800px;
+  height: 600px;
+  background: radial-gradient(ellipse at center, rgba(0, 212, 170, 0.04) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* How CP works */
+.cp-model {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  margin-bottom: var(--space-12);
+}
+
+@media (min-width: 768px) {
+  .cp-model { grid-template-columns: 1fr 1fr; }
+}
+
+.cp-model__card {
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.cp-model__card--featured {
+  border-color: var(--color-accent);
+  background: linear-gradient(135deg, var(--color-surface), rgba(0, 212, 170, 0.04));
+}
+
+.cp-model__title {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.cp-model__title svg { width: 20px; height: 20px; color: var(--color-accent); }
+
+.cp-types {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.cp-type {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  background: var(--color-surface-2);
+  border-radius: var(--radius-md);
+}
+
+.cp-type__name {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.cp-type__desc {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  flex: 1;
+  text-align: right;
+}
+
+/* Longevity bonus */
+.longevity-bar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.longevity-row {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.longevity-row__period {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  min-width: 80px;
+}
+
+.longevity-row__bar-wrapper {
+  flex: 1;
+  height: 8px;
+  background: var(--color-surface-2);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.longevity-row__bar {
+  height: 100%;
+  border-radius: var(--radius-full);
+  background: linear-gradient(90deg, var(--color-accent), var(--color-ivive));
+  transition: width 1s var(--ease-out);
+}
+
+.longevity-row__mult {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-accent);
+  min-width: 36px;
+  text-align: right;
+}
+
+/* Tier cards (new contribution-based) */
+.tiers-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  margin-bottom: var(--space-12);
+}
+
+@media (min-width: 640px) { .tiers-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .tiers-grid { grid-template-columns: repeat(5, 1fr); } }
+
+.tier-card {
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  transition: all var(--transition-interactive);
+  position: relative;
+  overflow: hidden;
+}
+
+.tier-card:hover {
+  border-color: var(--tier-color, var(--color-accent));
+  box-shadow: 0 0 30px color-mix(in srgb, var(--tier-color, var(--color-accent)) 20%, transparent);
+  transform: translateY(-2px);
+}
+
+.tier-card__top {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.tier-card__emoji {
+  font-size: 1.5rem;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+.tier-card__name {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.tier-card__cp {
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--tier-color, var(--color-accent));
+}
+
+.tier-card__divider {
+  height: 1px;
+  background: var(--color-border);
+}
+
+.tier-card__perks {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.tier-card__perks li {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  line-height: 1.4;
+}
+
+.tier-card__perks li::before {
+  content: '→';
+  color: var(--tier-color, var(--color-accent));
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+/* Founding Steward spotlight */
+.founding-spotlight {
+  padding: var(--space-8);
+  background: var(--color-surface);
+  border-radius: var(--radius-xl);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  position: relative;
+  overflow: hidden;
+  margin-bottom: var(--space-12);
+}
+
+.founding-spotlight::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--color-ora), transparent);
+}
+
+.founding-spotlight::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: -100px;
+  transform: translateY(-50%);
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(245, 158, 11, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.founding-spotlight__header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-5);
+  margin-bottom: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.founding-spotlight__icon {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-lg);
+  background: rgba(245, 158, 11, 0.12);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.founding-spotlight__title {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--color-ora);
+  letter-spacing: -0.01em;
+  margin-bottom: var(--space-2);
+}
+
+.founding-spotlight__sub {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  max-width: 56ch;
+  line-height: 1.6;
+}
+
+.founding-perks {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+@media (min-width: 640px) { .founding-perks { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .founding-perks { grid-template-columns: repeat(3, 1fr); } }
+
+.founding-perk {
+  padding: var(--space-4);
+  background: rgba(245, 158, 11, 0.06);
+  border: 1px solid rgba(245, 158, 11, 0.15);
+  border-radius: var(--radius-md);
+}
+
+.founding-perk__title {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-ora);
+  margin-bottom: var(--space-1);
+}
+
+.founding-perk__desc {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+.founding-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-5);
+  background: rgba(245, 158, 11, 0.1);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  border-radius: var(--radius-full);
+  margin-top: var(--space-6);
+}
+
+.founding-counter__num {
+  font-size: var(--text-xl);
+  font-weight: 800;
+  color: var(--color-ora);
+}
+
+.founding-counter__label {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+/* Onboarding flow */
+.onboarding {
+  margin-top: var(--space-12);
+  padding: var(--space-8);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.onboarding__title { font-size: var(--text-lg); font-weight: 600; color: var(--color-text); margin-bottom: var(--space-6); }
+
+.onboarding__steps {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 768px) { .onboarding__steps { grid-template-columns: repeat(5, 1fr); } }
+
+.onboard-step { text-align: center; }
+
+.onboard-step__num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--color-accent);
+  color: #0a0a0f;
+  font-size: var(--text-xs);
+  font-weight: 700;
+  border-radius: 50%;
+  margin-bottom: var(--space-2);
+}
+
+.onboard-step__text { font-size: var(--text-xs); color: var(--color-text-muted); line-height: 1.5; }
+
+/* ========== AI BUILDERS ========== */
+.ai-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-6);
+  margin-top: var(--space-10);
+}
+
+@media (min-width: 768px) { .ai-grid { grid-template-columns: 1fr 1fr; } }
+
+.ai-box {
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.ai-box--can { border-color: var(--color-accent); }
+.ai-box--cannot { border-color: #ef4444; }
+
+.ai-box__title { font-size: var(--text-lg); font-weight: 600; margin-bottom: var(--space-4); }
+.ai-box--can .ai-box__title { color: var(--color-accent); }
+.ai-box--cannot .ai-box__title { color: #ef4444; }
+
+.ai-box__list { list-style: none; }
+
+.ai-box__list li {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  padding: var(--space-2) 0;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  line-height: 1.5;
+}
+
+.ai-box__list li svg { width: 16px; height: 16px; flex-shrink: 0; margin-top: 3px; }
+.ai-box--can .ai-box__list li svg { color: var(--color-accent); }
+.ai-box--cannot .ai-box__list li svg { color: #ef4444; }
+
+.api-features {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+
+@media (min-width: 640px) { .api-features { grid-template-columns: repeat(3, 1fr); } }
+
+.api-feature {
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.api-feature__title { font-size: var(--text-sm); font-weight: 600; color: var(--color-text); margin-bottom: var(--space-2); }
+.api-feature__desc { font-size: var(--text-xs); color: var(--color-text-muted); line-height: 1.5; }
+
+/* ========== DIRECTIVE ========== */
+.directive-text {
+  margin-top: var(--space-10);
+  padding: var(--space-8);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  position: relative;
+}
+
+.directive-text::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-aventi), var(--color-ivive), var(--color-eviva));
+}
+
+.directive-text blockquote {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.8;
+  font-style: italic;
+  border-left: 3px solid var(--color-accent);
+  padding-left: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+.directive-note {
+  font-size: var(--text-sm);
+  color: var(--color-text-faint);
+  padding: var(--space-4);
+  background: var(--color-surface-2);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--color-accent-dim);
+  margin-top: var(--space-6);
+}
+
+.macro-objectives {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+
+@media (min-width: 640px) { .macro-objectives { grid-template-columns: repeat(2, 1fr); } }
+
+.macro-card {
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+}
+
+.macro-card__title {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: var(--space-2);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.macro-card__desc { font-size: var(--text-sm); color: var(--color-text-muted); line-height: 1.6; }
+
+/* ========== DOCS ========== */
+.docs-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+}
+
+@media (min-width: 640px) { .docs-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .docs-grid { grid-template-columns: repeat(3, 1fr); } }
+
+.doc-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  transition: border-color var(--transition-interactive), background var(--transition-interactive);
+}
+
+.doc-link:hover {
+  border-color: var(--color-accent);
+  background: var(--color-accent-glow);
+  color: var(--color-text);
+}
+
+.doc-link svg { width: 18px; height: 18px; color: var(--color-accent); flex-shrink: 0; }
+
+/* ========== COMMUNITY SECTION ========== */
+.community-links {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
+}
+
+@media (min-width: 640px) { .community-links { grid-template-columns: repeat(3, 1fr); } }
+
+.community-link-card {
+  padding: var(--space-6);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  transition: all var(--transition-interactive);
+  text-decoration: none;
+  color: var(--color-text);
+}
+
+.community-link-card:hover {
+  border-color: var(--color-connectome);
+  box-shadow: 0 4px 20px var(--color-connectome-glow);
+  transform: translateY(-2px);
+  color: var(--color-text);
+}
+
+.community-link-card__icon {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--color-connectome-glow);
+  color: var(--color-connectome);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.community-link-card__icon svg { width: 22px; height: 22px; }
+
+.community-link-card__title {
+  font-size: var(--text-base);
+  font-weight: 700;
+  color: var(--color-text);
+}
+
+.community-link-card__desc {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.community-link-card__url {
+  font-size: var(--text-xs);
+  color: var(--color-connectome);
+  font-weight: 600;
+}
+
+/* ========== FOOTER ========== */
+.footer {
+  padding: var(--space-12) 0 var(--space-8);
+  border-top: 1px solid var(--color-border);
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+  text-align: center;
+}
+
+.footer__brand { font-size: var(--text-sm); font-weight: 600; color: var(--color-text); }
+
+.footer__domains {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer__domains span.domain-dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+}
+
+.footer__links {
+  display: flex;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.footer__links a { font-size: var(--text-xs); color: var(--color-text-muted); font-weight: 500; }
+.footer__links a:hover { color: var(--color-accent); }
+
+.footer__community {
+  display: flex;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: var(--space-2);
+  border-top: 1px solid var(--color-border);
+  width: 100%;
+}
+
+.footer__community a {
+  font-size: var(--text-xs);
+  color: var(--color-connectome);
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.footer__community a:hover { color: var(--color-ora); }
+
+.footer__meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.footer__meta a, .footer__meta span { font-size: var(--text-xs); color: var(--color-text-faint); }
+
+.divider { border: none; height: 1px; background: linear-gradient(90deg, transparent, var(--color-border), transparent); margin: 0; }
+
+.section-sep { width: 100%; max-width: var(--content-wide); margin: 0 auto; padding-inline: var(--space-6); }
+.section-sep hr { border: none; height: 1px; background: linear-gradient(90deg, transparent, var(--color-border-bright), transparent); }
+</style>
+</head>
+<body>
+
+<!-- ==================== NAVIGATION ==================== -->
+<nav class="nav" id="nav">
+  <div class="nav__inner">
+    <a href="#hero" class="nav__logo">
+      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M16 2L28 28H4L16 2Z" stroke="currentColor" stroke-width="1.5" fill="none"/>
+        <path d="M16 8L22 24H10L16 8Z" stroke="currentColor" stroke-width="1" opacity="0.5" fill="none"/>
+        <circle cx="16" cy="16" r="2" fill="currentColor" opacity="0.8"/>
+      </svg>
+      <span>Ascension DAO</span>
+    </a>
+
+    <ul class="nav__links">
+      <li><a href="#domains">Domains</a></li>
+      <li><a href="#connectome">Ora</a></li>
+      <li><a href="#vision">Roadmap</a></li>
+      <li><a href="#how-it-works">How It Works</a></li>
+      <li><a href="#contributions">Contribute</a></li>
+      <li><a href="#governance">Governance</a></li>
+      <li><a href="#directive">Directive</a></li>
+      <li><a href="https://t.me/ascensioncommunity" target="_blank" rel="noopener noreferrer" class="nav__link--community">Community ↗</a></li>
+    </ul>
+
+    <div class="nav__right">
+      <button class="theme-toggle" data-theme-toggle aria-label="Switch to light mode">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="5"/>
+          <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/>
+        </svg>
+      </button>
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- Mobile nav -->
+<div class="mobile-nav" id="mobileNav">
+  <a href="#domains" onclick="closeMobileNav()">Domains</a>
+  <a href="#connectome" onclick="closeMobileNav()">Connectome & Ora</a>
+  <a href="#vision" onclick="closeMobileNav()">Roadmap</a>
+  <a href="#how-it-works" onclick="closeMobileNav()">How It Works</a>
+  <a href="#contributions" onclick="closeMobileNav()">Contribute & Earn</a>
+  <a href="#governance" onclick="closeMobileNav()">Governance</a>
+  <a href="#ai-builders" onclick="closeMobileNav()">For AI Builders</a>
+  <a href="#directive" onclick="closeMobileNav()">Directive</a>
+  <a href="#docs" onclick="closeMobileNav()">Documents</a>
+  <a href="https://t.me/ascensioncommunity" target="_blank" rel="noopener noreferrer" style="color:var(--color-connectome);">Telegram Community ↗</a>
+  <a href="https://t.me/ascensionai" target="_blank" rel="noopener noreferrer" style="color:var(--color-connectome);">Telegram Channel ↗</a>
+</div>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero" id="hero">
+  <div class="hero__bg">
+    <div class="hero__mesh"></div>
+    <div class="hero__grid"></div>
+    <div class="hero__nodes" id="heroNodes"></div>
+  </div>
+
+  <div class="hero__content">
+    <div class="hero__logo">
+      <svg viewBox="0 0 520 100" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Ascension Technologies DAO">
+        <g transform="translate(0, 4)">
+          <path d="M40 2L72 72H8L40 2Z" stroke="currentColor" stroke-width="2" fill="none" opacity="0.9"/>
+          <path d="M40 20L56 60H24L40 20Z" stroke="currentColor" stroke-width="1.2" fill="none" opacity="0.4"/>
+          <circle cx="40" cy="40" r="3.5" fill="currentColor" opacity="0.7"/>
+          <circle cx="40" cy="8" r="2" fill="currentColor" opacity="0.5"/>
+          <circle cx="65" cy="62" r="2" fill="currentColor" opacity="0.5"/>
+          <circle cx="15" cy="62" r="2" fill="currentColor" opacity="0.5"/>
+          <line x1="40" y1="12" x2="40" y2="36" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+          <line x1="62" y1="60" x2="43" y2="41" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+          <line x1="18" y1="60" x2="37" y2="41" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+        </g>
+        <text x="92" y="48" font-family="'General Sans', sans-serif" font-weight="700" font-size="40" fill="currentColor" letter-spacing="6">ASCENSION</text>
+        <text x="92" y="78" font-family="'General Sans', sans-serif" font-weight="300" font-size="16" fill="currentColor" letter-spacing="8" opacity="0.6">TECHNOLOGIES DAO</text>
+      </svg>
+    </div>
+
+    <p class="hero__tagline">AI-Built. Human-Verified. Open to All.</p>
+    <p class="hero__subtitle">An open-source non-profit DAO where AI agents build the future of human experience — and the global community votes to shape it.</p>
+
+    <div class="hero__ctas">
+      <a href="#contributions" class="btn btn--primary">Join &amp; Contribute</a>
+      <a href="https://t.me/ascensioncommunity" target="_blank" rel="noopener noreferrer" class="btn btn--community">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.032 9.373c-.148.658-.537.818-1.084.508l-2.998-2.167-1.447 1.355c-.16.154-.294.283-.603.283l.215-2.977 5.514-4.878c.24-.209-.052-.325-.372-.116L6.74 14.385l-2.949-.9c-.641-.198-.653-.641.135-.948l11.515-4.328c.534-.193 1 .13.121.039z"/>
+        </svg>
+        Join Community
+      </a>
+      <a href="#directive" class="btn btn--secondary">Read the Directive</a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== LIVE METRICS BAR ==================== -->
+<div class="metrics-bar" id="metrics">
+  <div class="metrics-bar__grid">
+    <div class="metric-item">
+      <div class="metric-item__dot"></div>
+      <span class="metric-item__value">Building in Public</span>
+    </div>
+    <div class="metric-item">
+      <div class="metric-item__dot"></div>
+      <div>
+        <div class="metric-item__value">10+</div>
+        <div class="metric-item__label">Ora Agents Active</div>
+      </div>
+    </div>
+    <div class="metric-item">
+      <div class="metric-item__dot"></div>
+      <div>
+        <div class="metric-item__value">Live</div>
+        <div class="metric-item__label">Contributions Tracked</div>
+      </div>
+    </div>
+    <div class="metric-item">
+      <div class="metric-item__dot"></div>
+      <div>
+        <div class="metric-item__value">Phase 1</div>
+        <div class="metric-item__label">Aventi — Shipping</div>
+      </div>
+    </div>
+    <div class="metric-item">
+      <div class="metric-item__dot"></div>
+      <div>
+        <div class="metric-item__value">t.me/ascensioncommunity</div>
+        <div class="metric-item__label">Community</div>
+      </div>
+    </div>
+    <div class="metric-item metric-item--founding">
+      <div class="metric-item__dot"></div>
+      <div>
+        <div class="metric-item__value">10 Spots</div>
+        <div class="metric-item__label">Founding Steward — Available</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== EXPERIENCE DOMAINS ==================== -->
+<div class="section-sep"><hr></div>
+<section class="domains" id="domains">
+  <div class="container">
+    <div class="domains__header reveal">
+      <span class="section-label">The Ecosystem</span>
+      <h2 class="domains__title">Three Domains of Human Experience</h2>
+      <p class="domains__subtitle">Every action in life falls within one of three domains. Ascension Technologies builds AI systems to optimize all of them — powered by Ora, the central intelligence layer.</p>
+    </div>
+
+    <div class="domains__grid">
+      <!-- AVENTI -->
+      <div class="domain-card domain-card--aventi reveal">
+        <div class="domain-card__accent"></div>
+        <div class="domain-card__body">
+          <div class="domain-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+            </svg>
+          </div>
+          <span class="domain-card__status domain-card__status--live">Live &amp; Shipping</span>
+          <h3 class="domain-card__name">AVENTI</h3>
+          <p class="domain-card__tagline">"Quality Time. Real Experiences. Human Connection."</p>
+          <p class="domain-card__desc">The discovery and activation layer for real-life experiences — events, adventures, social gatherings, date nights, cultural exploration. A TikTok-style swipe interface for finding what to do tonight, this weekend, or on your next trip. Launching in Toronto — the 3rd largest concert market in the world.</p>
+          <ul class="domain-card__features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> AI-powered event discovery with swipe interface</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Ora generates personalized experience feeds</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Cross-platform event aggregation &amp; distribution</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Social sharing and group planning</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> $3.14 CAD proven acquisition cost</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- iVIVE -->
+      <div class="domain-card domain-card--ivive reveal">
+        <div class="domain-card__accent"></div>
+        <div class="domain-card__body">
+          <div class="domain-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 20V10M12 20V4M6 20v-6"/>
+            </svg>
+          </div>
+          <span class="domain-card__status domain-card__status--building">Roadmap: Year 1–2</span>
+          <h3 class="domain-card__name">iVIVE</h3>
+          <p class="domain-card__tagline">"Personal Evolution. Daily Optimization. Peak Performance."</p>
+          <p class="domain-card__desc">The self-improvement and maintenance layer — fitness, health optimization, skill development, biohacking, meditation, nutrition. Ora learns your goals, tracks your progress, and proactively suggests the next action to optimize your mind, body, and capability.</p>
+          <ul class="domain-card__features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> AI fitness and nutrition planning</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Skill development pathways</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Biohacking and longevity protocols</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> CoachingAgent integration</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Progress tracking and habit formation</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- EVIVA -->
+      <div class="domain-card domain-card--eviva reveal">
+        <div class="domain-card__accent"></div>
+        <div class="domain-card__body">
+          <div class="domain-card__icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="2" y1="12" x2="22" y2="12"/>
+              <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/>
+            </svg>
+          </div>
+          <span class="domain-card__status domain-card__status--planned">Roadmap: Year 2–5+</span>
+          <h3 class="domain-card__name">EVIVA</h3>
+          <p class="domain-card__tagline">"Contribution. Community Impact. Collective Growth."</p>
+          <p class="domain-card__desc">The service and contribution layer — volunteering, community projects, mentoring, environmental action, charity work. Eviva connects your unique skills and availability with opportunities to create meaningful impact, gamified to make giving back as engaging as entertainment.</p>
+          <ul class="domain-card__features">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Skill-matched volunteer opportunities</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Community project coordination</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Environmental and social impact tracking</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Mentorship matching</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Gamified contribution rewards</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="domains__connector reveal">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <line x1="12" y1="5" x2="12" y2="19"/>
+        <polyline points="19 12 12 19 5 12"/>
+      </svg>
+    </div>
+
+    <!-- REST domain -->
+    <div class="domain-rest reveal">
+      <div class="domain-rest__accent"></div>
+      <div class="domain-rest__body">
+        <div class="domain-rest__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/>
+          </svg>
+        </div>
+        <div class="domain-rest__content">
+          <h3 class="domain-rest__name">REST</h3>
+          <p class="domain-rest__tagline">"Restoration. Recovery. Renewal."</p>
+          <p class="domain-rest__desc">The restoration layer — relaxation, recovery, sleep optimization, digital detox, nature immersion, and everything that recharges you for the next cycle of experience, growth, and contribution. Ora knows when you need to stop and helps you do it right.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CONNECTOME / ORA ==================== -->
+<div class="section-sep"><hr></div>
+<section class="connectome section" id="connectome">
+  <div class="container">
+    <div class="connectome__header reveal">
+      <span class="connectome__section-label">The Intelligence Layer</span>
+      <h2 class="connectome__title">The Brain: Connectome &amp; Ora</h2>
+      <p class="connectome__subtitle">Ora is the central AI brain powering every Ascension product — a multi-agent system that thinks, builds, recommends, and learns in real time. The Connectome is the nervous system connecting all three domains.</p>
+    </div>
+
+    <!-- Ora Hero -->
+    <div class="ora-hero reveal">
+      <div class="ora-hero__visual">
+        <div class="ora-brain">
+          <div class="ora-brain__ring ora-brain__ring--3"></div>
+          <div class="ora-brain__ring ora-brain__ring--2"></div>
+          <div class="ora-brain__ring ora-brain__ring--1"></div>
+          <div class="ora-brain__core">
+            <span class="ora-brain__core-text">Ora</span>
+          </div>
+          <!-- Agent dots positioned around the brain -->
+          <div class="ora-brain__agents">
+            <div class="ora-agent-dot" style="top:2%; left:42%; animation-delay:0s;" title="DiscoveryAgent">D</div>
+            <div class="ora-agent-dot" style="top:10%; left:72%; animation-delay:0.5s;" title="CoachingAgent">C</div>
+            <div class="ora-agent-dot" style="top:35%; left:88%; animation-delay:1s;" title="EnlightenmentAgent">E</div>
+            <div class="ora-agent-dot" style="top:65%; left:84%; animation-delay:1.5s;" title="UIGeneratorAgent">UI</div>
+            <div class="ora-agent-dot" style="top:86%; left:65%; animation-delay:2s;" title="WorldAgent">W</div>
+            <div class="ora-agent-dot" style="top:90%; left:38%; animation-delay:0.3s;" title="CollectiveIntelligenceAgent">CI</div>
+            <div class="ora-agent-dot" style="top:82%; left:10%; animation-delay:0.8s;" title="ExploreAgent">Ex</div>
+            <div class="ora-agent-dot" style="top:60%; left:2%; animation-delay:1.3s;" title="FeatureLabAgent">FL</div>
+            <div class="ora-agent-dot" style="top:32%; left:5%; animation-delay:1.8s;" title="FeedbackAnalystAgent">FA</div>
+            <div class="ora-agent-dot" style="top:10%; left:20%; animation-delay:2.3s;" title="RecommendationAgent">R</div>
+            <div class="ora-agent-dot" style="top:0%; left:55%; animation-delay:0.7s;" title="DaoAgent">DAO</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="ora-hero__content">
+        <div class="ora-hero__label">Live &amp; Building</div>
+        <h3 class="ora-hero__name"><span>Ora</span> — Central Intelligence System</h3>
+        <p class="ora-hero__desc">Ora is not a single AI — it's an orchestrated network of specialized agents, each an expert in a domain of human experience. Together they power server-driven interfaces, personalized recommendations, impact measurement, and DAO governance — continuously learning from every user interaction.</p>
+        <div class="ora-stat-row">
+          <div class="ora-stat">
+            <span class="ora-stat__num">11</span>
+            <span class="ora-stat__label">Specialized Agents</span>
+          </div>
+          <div class="ora-stat">
+            <span class="ora-stat__num">3</span>
+            <span class="ora-stat__label">Life Domains</span>
+          </div>
+          <div class="ora-stat">
+            <span class="ora-stat__num">∞</span>
+            <span class="ora-stat__label">Screen Variants</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Agent grid -->
+    <h3 style="font-size:var(--text-lg);font-weight:700;color:var(--color-text);margin-bottom:var(--space-6);" class="reveal">The Agent Network</h3>
+
+    <div class="agents-grid reveal">
+      <div class="agent-card">
+        <div class="agent-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <div class="agent-card__name">DiscoveryAgent</div>
+        <div class="agent-card__role">Finds and aggregates opportunities from across the internet</div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+        </div>
+        <div class="agent-card__name">CoachingAgent</div>
+        <div class="agent-card__role">Personal evolution guidance, habit formation, skill growth</div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="agent-card__name">EnlightenmentAgent</div>
+        <div class="agent-card__role">Consciousness expansion, mindfulness, and deeper meaning</div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+        </div>
+        <div class="agent-card__name">UIGeneratorAgent</div>
+        <div class="agent-card__role">Generates JSON screen specs for server-driven interfaces</div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg>
+        </div>
+        <div class="agent-card__name">WorldAgent</div>
+        <div class="agent-card__role">Maps global opportunities and local context</div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        </div>
+        <div class="agent-card__name">CollectiveIntelligenceAgent</div>
+        <div class="agent-card__role">Synthesizes community patterns and collective wisdom</div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        </div>
+        <div class="agent-card__name">ExploreAgent</div>
+        <div class="agent-card__role">Surfaces serendipitous discoveries outside your comfort zone</div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        </div>
+        <div class="agent-card__name">FeatureLabAgent</div>
+        <div class="agent-card__role">Generates and A/B tests new product features autonomously</div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+        </div>
+        <div class="agent-card__name">FeedbackAnalystAgent</div>
+        <div class="agent-card__role">Processes user signal, fulfilment scores, and engagement data</div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+        </div>
+        <div class="agent-card__name">RecommendationAgent</div>
+        <div class="agent-card__role">Cross-domain personalized suggestions based on LTV impact</div>
+      </div>
+      <div class="agent-card">
+        <div class="agent-card__icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="agent-card__name">DaoAgent</div>
+        <div class="agent-card__role">Reads proposals, analyzes votes, surfaces governance insights</div>
+      </div>
+    </div>
+
+    <!-- Server-Driven UI -->
+    <h3 style="font-size:var(--text-lg);font-weight:700;color:var(--color-text);margin-bottom:var(--space-6);" class="reveal">Server-Driven UI — New Content Without App Updates</h3>
+
+    <div class="sdui-panel reveal">
+      <div class="sdui-explain">
+        <h4 class="sdui-explain__title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          How It Works
+        </h4>
+        <p class="sdui-explain__desc">Ora generates JSON "screen specifications" — complete UI blueprints — that the mobile app renders natively. New features, layouts, and entire experiences can be shipped without touching the App Store. The app becomes a renderer; Ora becomes the author.</p>
+
+        <div class="sdui-flow">
+          <div class="sdui-flow__step">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M20.188 10.934l-1.288-.743a8 8 0 00-.008-4.376l1.298-.745A.5.5 0 0020 5H4a.5.5 0 00-.19.95l1.298.745a8 8 0 00-.008 4.376l-1.288.743A.5.5 0 004 13h16a.5.5 0 00.188-.066z"/></svg>
+            Ora analyses user context + engagement patterns
+          </div>
+          <div class="sdui-flow__arrow">↓</div>
+          <div class="sdui-flow__step">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            UIGeneratorAgent outputs a JSON screen spec
+          </div>
+          <div class="sdui-flow__arrow">↓</div>
+          <div class="sdui-flow__step">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+            Expo React Native app renders spec natively
+          </div>
+          <div class="sdui-flow__arrow">↓</div>
+          <div class="sdui-flow__step">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            User gets a unique, personalised experience
+          </div>
+        </div>
+      </div>
+
+      <div class="tech-stack">
+        <div class="tech-stack__title">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Tech Stack
+        </div>
+        <div class="tech-stack__items">
+          <div class="tech-item"><span class="tech-item__name">FastAPI</span><span class="tech-item__purpose">Ora API server</span><span class="tech-item__badge">Backend</span></div>
+          <div class="tech-item"><span class="tech-item__name">PostgreSQL</span><span class="tech-item__purpose">Core data store</span><span class="tech-item__badge">Database</span></div>
+          <div class="tech-item"><span class="tech-item__name">pgvector</span><span class="tech-item__purpose">Semantic embedding search</span><span class="tech-item__badge">AI</span></div>
+          <div class="tech-item"><span class="tech-item__name">Redis</span><span class="tech-item__purpose">Real-time caching &amp; queues</span><span class="tech-item__badge">Cache</span></div>
+          <div class="tech-item"><span class="tech-item__name">Expo React Native</span><span class="tech-item__purpose">Server-driven UI renderer</span><span class="tech-item__badge">Mobile</span></div>
+        </div>
+      </div>
+    </div><!-- end sdui-panel -->
+    <!-- GitHub CTA -->
+    <div class="connectome__cta reveal">
+      <h3 class="connectome__cta-title">Open Source &amp; Building in Public</h3>
+      <p class="connectome__cta-desc">The Connectome backend is live and evolving. Follow along, contribute, and help shape the intelligence layer of the Ascension ecosystem.</p>
+      <div style="display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap;">
+        <a href="https://github.com/AvielCarlos/ascension-site" target="_blank" rel="noopener noreferrer" class="btn btn--primary">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg>
+          View on GitHub
+        </a>
+        <a href="https://t.me/ascensioncommunity" target="_blank" rel="noopener noreferrer" class="btn btn--community">Join the Build</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== VISION ==================== -->
+<div class="section-sep"><hr></div>
+<section class="section" id="vision">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">The Roadmap</span>
+      <h2 class="section-title">One System. Three Phases. Infinite Possibility.</h2>
+      <p class="section-subtitle">From event discovery to a living intelligence system that optimizes the human experience — built by Ora, governed by everyone.</p>
+    </div>
+
+    <div class="phase-cards">
+      <div class="phase-card gradient-border reveal">
+        <span class="phase-card__badge phase-card__badge--live"><span class="phase-dot" style="background:var(--color-aventi);animation:pulse-dot 2s infinite;"></span>Phase 1 — Live &amp; Shipping</span>
+        <h3 class="phase-card__title">Aventi — Experience Discovery</h3>
+        <p class="phase-card__desc">The first product under Ascension Technologies is live and building — an AI-powered event discovery platform with a TikTok-style swipe interface. Ora's DiscoveryAgent aggregates events from every platform and generates personalized feeds. Launching in Toronto (3rd largest concert market in the world) with a proven $3.14 CAD customer acquisition cost. Connectome backend is running.</p>
+        <div class="phase-highlights"><span class="highlight-tag">Affiliate Commissions</span><span class="highlight-tag">Premium Subscriptions</span><span class="highlight-tag">Creator Subscriptions</span><span class="highlight-tag">Interstitial Ads</span><span class="highlight-tag">Merch Commissions</span></div>
+        <div class="phase-card__columns">
+          <div class="role-box"><div class="role-box__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>Ora Builds</div><ul class="role-box__list"><li>Features via UIGeneratorAgent</li><li>Event feeds via DiscoveryAgent</li><li>A/B variants via FeatureLabAgent</li><li>Recommendations via RecommendationAgent</li></ul></div>
+          <div class="role-box"><div class="role-box__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Humans Vote On</div><ul class="role-box__list"><li>Which interface variant wins</li><li>Feature priorities</li><li>City expansion order</li><li>Partnership approvals</li></ul></div>
+        </div>
+      </div>
+
+      <div class="phase-card reveal">
+        <span class="phase-card__badge phase-card__badge--building"><span class="phase-dot" style="background:var(--color-ivive);"></span>Phase 2 — Year 1–2</span>
+        <h3 class="phase-card__title">iVive Integration — Personal Evolution Layer</h3>
+        <p class="phase-card__desc">Integrating the personal evolution domain into the Ascension ecosystem. Self-improvement, fitness, health optimization, skill development — powered by Ora's CoachingAgent and EnlightenmentAgent. Server-driven UI creates mini-apps on-the-fly with no app store updates required.</p>
+        <div class="phase-highlights"><span class="highlight-tag" style="border-color:var(--color-aventi);color:var(--color-aventi);">Aventi</span><span class="highlight-tag" style="border-color:var(--color-ivive);color:var(--color-ivive);">iVive</span><span class="highlight-tag" style="border-color:var(--color-eviva);color:var(--color-eviva);">Eviva</span><span class="highlight-tag" style="border-color:var(--color-rest);color:var(--color-rest);">Rest</span></div>
+        <div class="phase-card__columns">
+          <div class="role-box"><div class="role-box__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>Ora Builds</div><ul class="role-box__list"><li>Coaching suggestions</li><li>Server-driven micro-apps</li><li>Swipe pattern learning</li><li>Cross-domain scheduling</li></ul></div>
+          <div class="role-box"><div class="role-box__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Humans Vote On</div><ul class="role-box__list"><li>Category definitions</li><li>Recommendation weights</li><li>Onboarding flow designs</li><li>Privacy boundaries</li></ul></div>
+        </div>
+        <p style="font-size:var(--text-xs);color:var(--color-text-faint);margin-top:var(--space-4);">Swipe gestures: Right = Do Now, Left = Do Later, Up = Pass, Tap = Deep Dive</p>
+      </div>
+
+      <div class="phase-card reveal">
+        <span class="phase-card__badge"><span class="phase-dot" style="background:var(--color-eviva);"></span>Phase 3 — Year 2–5+</span>
+        <h3 class="phase-card__title">The Connectome Systemic Directive</h3>
+        <p class="phase-card__desc">A living intelligence system that surpasses searching and asking — an automated flow of life. Ora's CollectiveIntelligenceAgent synthesizes the "internet of opportunities" uniquely for each individual. Eviva completes all three domains. Interfaces: swiping cards, chatbots, sensor measurements, notifications, scheduling, temporary apps, and eventually an AI OS.</p>
+        <div class="phase-highlights"><span class="highlight-tag">Meta-Recommendation System</span><span class="highlight-tag">Life Domain Optimization</span><span class="highlight-tag">AI OS</span><span class="highlight-tag">Consciousness Expansion</span><span class="highlight-tag" style="border-color:var(--color-connectome);color:var(--color-connectome);">Connectome Full Deployment</span></div>
+        <div class="phase-card__columns">
+          <div class="role-box"><div class="role-box__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/></svg>Ora Builds</div><ul class="role-box__list"><li>Entire autonomous system</li><li>Experience generation</li><li>Schedule management</li><li>Life flow optimization</li></ul></div>
+          <div class="role-box"><div class="role-box__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>Humans Vote On</div><ul class="role-box__list"><li>Ethical boundaries</li><li>Consciousness parameters</li><li>System-level directives</li><li>Humanitarian priorities</li></ul></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== HOW IT WORKS ==================== -->
+<div class="section-sep"><hr></div>
+<section class="section" id="how-it-works">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">The Process</span>
+      <h2 class="section-title">The AI-First Development Model</h2>
+      <p class="section-subtitle">Ora's agents do the building. The global community decides what ships. A continuous cycle of creation, evaluation, and refinement — powered by real user data.</p>
+    </div>
+
+    <div class="flow-diagram reveal">
+      <div class="flow-step"><div class="flow-step__number">1</div><h4 class="flow-step__title">Ora Proposes</h4><p class="flow-step__desc">Ora's agents continuously generate new features, interface designs, and improvements based on real engagement data.</p></div>
+      <div class="flow-step"><div class="flow-step__number">2</div><h4 class="flow-step__title">FeatureLab Creates Variants</h4><p class="flow-step__desc">FeatureLabAgent generates multiple variants — different layouts, algorithms, and approaches to test.</p></div>
+      <div class="flow-step"><div class="flow-step__number">3</div><h4 class="flow-step__title">Community Votes</h4><p class="flow-step__desc">DAO members see variants side-by-side and vote on which performs better and aligns with the vision.</p></div>
+      <div class="flow-step"><div class="flow-step__number">4</div><h4 class="flow-step__title">Winner Ships</h4><p class="flow-step__desc">Approved version deploys automatically via server-driven UI. No gatekeepers, no bottlenecks.</p></div>
+      <div class="flow-step"><div class="flow-step__number">5</div><h4 class="flow-step__title">Ora Learns</h4><p class="flow-step__desc">FeedbackAnalystAgent processes voting and engagement data. Each generation is smarter than the last.</p></div>
+    </div>
+
+    <h3 style="font-size:var(--text-lg);font-weight:600;color:var(--color-text);margin-bottom:var(--space-6);" class="reveal">Types of Community Votes</h3>
+
+    <div class="vote-types reveal">
+      <div class="vote-card"><div class="vote-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><path d="M10 17h4"/></svg></div><h4 class="vote-card__title">Interface A/B Tests</h4><p class="vote-card__desc">Side-by-side previews of Ora-generated design variants. Vote on what feels right.</p></div>
+      <div class="vote-card"><div class="vote-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg></div><h4 class="vote-card__title">Feature Prioritization</h4><p class="vote-card__desc">"What should Ora build next?" Ranked choice voting on the development roadmap.</p></div>
+      <div class="vote-card"><div class="vote-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h4 class="vote-card__title">Quality Gates</h4><p class="vote-card__desc">"Does this feature meet our standards?" Approve or reject with a 60% threshold.</p></div>
+      <div class="vote-card"><div class="vote-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></div><h4 class="vote-card__title">Strategic Direction</h4><p class="vote-card__desc">"Which city should we expand to next?" Weighted voting by contribution tier.</p></div>
+      <div class="vote-card"><div class="vote-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M12 8v4M12 16h.01"/></svg></div><h4 class="vote-card__title">Ethical Boundaries</h4><p class="vote-card__desc">"Should the system access this data type?" Yes/no with required community discussion.</p></div>
+      <div class="vote-card"><div class="vote-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 3h-8l-2 4h12l-2-4z"/></svg></div><h4 class="vote-card__title">Budget Allocation</h4><p class="vote-card__desc">"How should treasury funds be distributed?" Quadratic voting for fair allocation.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== CONTRIBUTIONS & REWARDS ==================== -->
+<div class="section-sep"><hr></div>
+<section class="contributions section" id="contributions">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Contribute &amp; Earn</span>
+      <h2 class="section-title">Every Contribution Counts. Permanently.</h2>
+      <p class="section-subtitle">Every line of code, design asset, research doc, and community action is tracked. Ora evaluates impact using real user data — your Contribution Points grow as long as your work creates value.</p>
+    </div>
+
+    <div class="cp-model reveal" style="margin-top:var(--space-10);">
+      <div class="cp-model__card cp-model__card--featured">
+        <h3 class="cp-model__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>Contribution Points (CP) — Lifetime Value Model</h3>
+        <p style="font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.7;margin-bottom:var(--space-5);">Unlike one-time rewards, CP compounds over time. Every month, Ora re-evaluates the ongoing impact of your work — engagement data, feature usage, community health — and awards CP based on living value, not just past effort.</p>
+        <div class="cp-types">
+          <div class="cp-type"><span class="cp-type__name">💻 Code &amp; Engineering</span><span class="cp-type__desc">Features shipped, bugs fixed, PRs merged</span></div>
+          <div class="cp-type"><span class="cp-type__name">🎨 Design &amp; UI/UX</span><span class="cp-type__desc">Screens, components, design systems</span></div>
+          <div class="cp-type"><span class="cp-type__name">🔬 Research &amp; Analysis</span><span class="cp-type__desc">User research, market analysis, docs</span></div>
+          <div class="cp-type"><span class="cp-type__name">🌐 Community &amp; Comms</span><span class="cp-type__desc">Growth, moderation, onboarding</span></div>
+          <div class="cp-type"><span class="cp-type__name">🤖 Ora Interactions</span><span class="cp-type__desc">Quality feedback, votes, test data</span></div>
+        </div>
+      </div>
+
+      <div class="cp-model__card">
+        <h3 class="cp-model__title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>Longevity Multiplier</h3>
+        <p style="font-size:var(--text-sm);color:var(--color-text-muted);line-height:1.7;margin-bottom:var(--space-5);">The longer your contributions stay impactful, the more CP they earn. Sustained, quality work is rewarded more than short bursts.</p>
+        <div class="longevity-bar">
+          <div class="longevity-row"><span class="longevity-row__period">First month</span><div class="longevity-row__bar-wrapper"><div class="longevity-row__bar" style="width:66%;"></div></div><span class="longevity-row__mult">1.0×</span></div>
+          <div class="longevity-row"><span class="longevity-row__period">3 months</span><div class="longevity-row__bar-wrapper"><div class="longevity-row__bar" style="width:73%;"></div></div><span class="longevity-row__mult">1.1×</span></div>
+          <div class="longevity-row"><span class="longevity-row__period">6 months</span><div class="longevity-row__bar-wrapper"><div class="longevity-row__bar" style="width:83%;"></div></div><span class="longevity-row__mult">1.25×</span></div>
+          <div class="longevity-row"><span class="longevity-row__period">1 year+</span><div class="longevity-row__bar-wrapper"><div class="longevity-row__bar" style="width:100%;"></div></div><span class="longevity-row__mult">1.5×</span></div>
+        </div>
+        <p style="font-size:var(--text-xs);color:var(--color-text-faint);margin-top:var(--space-4);">Ora evaluates impact monthly using fulfilment scores, engagement data, and feature lab results.</p>
+      </div>
+    </div>
+
+    <h3 style="font-size:var(--text-lg);font-weight:700;color:var(--color-text);margin-bottom:var(--space-6);" class="reveal">Contribution Tiers</h3>
+
+    <div class="tiers-grid reveal">
+      <div class="tier-card" style="--tier-color:#94a3b8;"><div class="tier-card__top"><span class="tier-card__emoji">🔘</span><div><div class="tier-card__name">Observer</div><div class="tier-card__cp" style="color:#94a3b8;">0 CP</div></div></div><div class="tier-card__divider"></div><ul class="tier-card__perks"><li>Access all proposals &amp; discussions</li><li>Read AI development logs</li><li>Join Telegram community</li><li>View Ora agent activity</li></ul></div>
+      <div class="tier-card" style="--tier-color:#3b82f6;"><div class="tier-card__top"><span class="tier-card__emoji">🔵</span><div><div class="tier-card__name">Contributor</div><div class="tier-card__cp" style="color:#3b82f6;">100+ CP</div></div></div><div class="tier-card__divider"></div><ul class="tier-card__perks"><li>Vote on all A/B tests</li><li>Submit feedback to Ora</li><li>Gasless voting via Snapshot</li><li>Contributor NFT badge</li></ul></div>
+      <div class="tier-card" style="--tier-color:var(--color-eviva);"><div class="tier-card__top"><span class="tier-card__emoji">🟣</span><div><div class="tier-card__name">Builder</div><div class="tier-card__cp" style="color:var(--color-eviva);">500+ CP</div></div></div><div class="tier-card__divider"></div><ul class="tier-card__perks"><li>Submit new proposals</li><li>Direct Ora's priorities</li><li>Access dev environment</li><li>DAO treasury funding eligible</li></ul></div>
+      <div class="tier-card" style="--tier-color:var(--color-accent);"><div class="tier-card__top"><span class="tier-card__emoji">🟡</span><div><div class="tier-card__name">Steward</div><div class="tier-card__cp" style="color:var(--color-accent);">3,000+ CP</div></div></div><div class="tier-card__divider"></div><ul class="tier-card__perks"><li>Emergency multisig authority</li><li>Treasury oversight</li><li>Strategic planning sessions</li><li>Govern Ascension direction</li></ul></div>
+      <div class="tier-card" style="--tier-color:var(--color-ora);background:linear-gradient(135deg,var(--color-surface),rgba(245,158,11,0.05));border-color:rgba(245,158,11,0.3);"><div class="tier-card__top"><span class="tier-card__emoji">⚡</span><div><div class="tier-card__name">Founding Steward</div><div class="tier-card__cp" style="color:var(--color-ora);">First 10 to Steward</div></div></div><div class="tier-card__divider"></div><ul class="tier-card__perks"><li>Permanent recognition in DAO history</li><li>Founding governance rights</li><li>Shape Ascension Technologies direction</li><li>Early access to all Ora features</li><li style="color:var(--color-ora);font-weight:600;">⚡ 10 spots total, ever</li></ul></div>
+    </div>
+
+    <div class="founding-spotlight reveal">
+      <div class="founding-spotlight__header">
+        <div class="founding-spotlight__icon">⚡</div>
+        <div>
+          <h3 class="founding-spotlight__title">Founding Steward Program</h3>
+          <p class="founding-spotlight__sub">The first 10 contributors to reach Steward tier (3,000 CP) earn Founding Steward status — permanent recognition and founding governance rights for the life of Ascension Technologies DAO.</p>
+        </div>
+      </div>
+      <div class="founding-perks">
+        <div class="founding-perk"><div class="founding-perk__title">🏛️ Founding Governance</div><div class="founding-perk__desc">Co-author the core governance framework and set precedents all future DAOs will follow.</div></div>
+        <div class="founding-perk"><div class="founding-perk__title">📜 Permanent Recognition</div><div class="founding-perk__desc">Your name and contributions enshrined in the DAO's founding documents — immutably on-chain, forever.</div></div>
+        <div class="founding-perk"><div class="founding-perk__title">🚀 Ora Early Access</div><div class="founding-perk__desc">First access to every new Ora agent, feature, and capability — before anyone else.</div></div>
+        <div class="founding-perk"><div class="founding-perk__title">🔑 Multisig Authority</div><div class="founding-perk__desc">Founding Stewards hold seats in the 3-of-5 emergency multisig — real on-chain power.</div></div>
+        <div class="founding-perk"><div class="founding-perk__title">🌐 Ascension Direction</div><div class="founding-perk__desc">Vote on strategic direction of all Ascension Technologies products, not just Aventi.</div></div>
+        <div class="founding-perk"><div class="founding-perk__title">🏆 LTV Multiplier Lock</div><div class="founding-perk__desc">Your 1.5× longevity multiplier is locked in and guaranteed for the life of the protocol.</div></div>
+      </div>
+      <div class="founding-counter"><span class="founding-counter__num">10</span><span class="founding-counter__label">Founding Steward spots available — first come, first earned</span></div>
+    </div>
+
+    <div class="onboarding reveal">
+      <h3 class="onboarding__title">Start Contributing in 5 Steps</h3>
+      <div class="onboarding__steps">
+        <div class="onboard-step"><div class="onboard-step__num">1</div><p class="onboard-step__text">Join the Telegram community (t.me/ascensioncommunity)</p></div>
+        <div class="onboard-step"><div class="onboard-step__num">2</div><p class="onboard-step__text">Fork the repo and explore open issues on GitHub</p></div>
+        <div class="onboard-step"><div class="onboard-step__num">3</div><p class="onboard-step__text">Make your first contribution — code, design, research, or community</p></div>
+        <div class="onboard-step"><div class="onboard-step__num">4</div><p class="onboard-step__text">Receive your Contributor NFT and start accumulating CP</p></div>
+        <div class="onboard-step"><div class="onboard-step__num">5</div><p class="onboard-step__text">Watch your impact grow monthly as Ora evaluates your work</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== GOVERNANCE ==================== -->
+<div class="section-sep"><hr></div>
+<section class="section" id="governance">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Governance</span>
+      <h2 class="section-title">Open, Transparent, Accessible</h2>
+      <p class="section-subtitle">Zero-cost voting, on-chain treasury execution, and machine-readable proposals — designed for both humans and Ora's DaoAgent.</p>
+    </div>
+    <h3 style="font-size:var(--text-lg);font-weight:600;color:var(--color-text);margin-top:var(--space-10);margin-bottom:var(--space-4);" class="reveal">Governance Stack</h3>
+    <div class="gov-stack reveal">
+      <div class="gov-stack__item"><div class="gov-stack__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div><h4 class="gov-stack__title">Snapshot</h4><p class="gov-stack__desc">Gasless off-chain voting. Zero cost for every member to participate.</p></div>
+      <div class="gov-stack__item"><div class="gov-stack__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg></div><h4 class="gov-stack__title">Aragon OSx</h4><p class="gov-stack__desc">On-chain treasury execution with secure multisig controls.</p></div>
+      <div class="gov-stack__item"><div class="gov-stack__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg></div><h4 class="gov-stack__title">GitHub + Discourse</h4><p class="gov-stack__desc">Open proposal discussion and development coordination.</p></div>
+      <div class="gov-stack__item"><div class="gov-stack__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><h4 class="gov-stack__title">Machine-Readable</h4><p class="gov-stack__desc">All proposals published in JSON format for Ora's DaoAgent and external AI systems.</p></div>
+    </div>
+    <h3 style="font-size:var(--text-lg);font-weight:600;color:var(--color-text);margin-bottom:var(--space-4);" class="reveal">Voting Mechanisms by Decision Type</h3>
+    <div class="gov-table-wrapper reveal">
+      <table class="gov-table">
+        <thead><tr><th>Decision</th><th>Mechanism</th><th>Who Votes</th></tr></thead>
+        <tbody>
+          <tr><td>Interface A/B tests</td><td>Simple majority (gasless)</td><td>All members</td></tr>
+          <tr><td>Feature priorities</td><td>Ranked choice voting</td><td>All members</td></tr>
+          <tr><td>Quality gates</td><td>Approve/reject with 60% threshold</td><td>Active contributors</td></tr>
+          <tr><td>Strategic direction</td><td>Weighted voting by CP tier</td><td>Builders + Stewards</td></tr>
+          <tr><td>Ethical boundaries</td><td>Supermajority (75%) required</td><td>All members</td></tr>
+          <tr><td>Treasury allocation</td><td>Quadratic voting</td><td>All members</td></tr>
+          <tr><td>Emergency actions</td><td>Multisig (3-of-5 council)</td><td>Founding Stewards</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <h3 style="font-size:var(--text-lg);font-weight:600;color:var(--color-text);margin-bottom:var(--space-4);" class="reveal">Legal Structure Path</h3>
+    <div class="legal-path reveal">
+      <div class="legal-step"><div class="legal-step__number">Step 1</div><h4 class="legal-step__title">Wyoming UNA</h4><p class="legal-step__desc">Immediate formation as an Unincorporated Nonprofit Association for legal recognition from day one.</p></div>
+      <div class="legal-step"><div class="legal-step__number">Step 2</div><h4 class="legal-step__title">Wyoming DUNA</h4><p class="legal-step__desc">Convert to a Decentralized Unincorporated Nonprofit Association at 100+ members. DAO-native law with on-chain governance legally recognized.</p></div>
+      <div class="legal-step"><div class="legal-step__number">Step 3</div><h4 class="legal-step__title">501(c) Tax Exempt</h4><p class="legal-step__desc">File for federal tax-exempt status as a recognized non-profit organization.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOR AI BUILDERS ==================== -->
+<div class="section-sep"><hr></div>
+<section class="section" id="ai-builders">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">For Machines</span>
+      <h2 class="section-title">Built for Machines. Governed by Humans.</h2>
+      <p class="section-subtitle">Every governance endpoint is machine-readable. Ora's agents read, analyze, propose, and build — but only humans hold the keys to approval.</p>
+    </div>
+    <div class="ai-grid">
+      <div class="ai-box ai-box--can reveal">
+        <h3 class="ai-box__title">AI Agents Can</h3>
+        <ul class="ai-box__list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Read all proposals via Snapshot API and The Graph (GraphQL)</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Analyze voting patterns and community sentiment</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Submit new proposals with structured JSON</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Generate A/B test variants for community review</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Build and deploy features autonomously via server-driven UI</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Fork, improve, and submit PRs on the open-source codebase</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>Measure contribution impact to inform CP allocation</li>
+        </ul>
+      </div>
+      <div class="ai-box ai-box--cannot reveal">
+        <h3 class="ai-box__title">AI Agents Cannot</h3>
+        <ul class="ai-box__list">
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Vote on any proposal or A/B test</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Access treasury funds directly</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Override human decisions</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Modify governance rules</li>
+          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>Award or deduct CP from members</li>
+        </ul>
+      </div>
+    </div>
+    <div class="api-features reveal">
+      <div class="api-feature"><h4 class="api-feature__title">Snapshot API</h4><p class="api-feature__desc">Full read access to all proposals, votes, and governance history via REST and GraphQL endpoints.</p></div>
+      <div class="api-feature"><h4 class="api-feature__title">Structured JSON Proposals</h4><p class="api-feature__desc">All proposals published with standardized fields for seamless machine parsing and analysis by Ora's DaoAgent.</p></div>
+      <div class="api-feature"><h4 class="api-feature__title">YAML Constitution</h4><p class="api-feature__desc">DAO constitution stored in machine-readable YAML. Fork it, extend it, build on it.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SYSTEMIC DIRECTIVE ==================== -->
+<div class="section-sep"><hr></div>
+<section class="section" id="directive">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">The Vision</span>
+      <h2 class="section-title">The Connectome Systemic Directive</h2>
+      <p class="section-subtitle">The foundational philosophy that guides every system, every algorithm, every decision — and the north star for Ora's intelligence.</p>
+    </div>
+    <div class="directive-text reveal">
+      <blockquote><p>We want to create a system that surpasses the activity of searching and asking questions with an automated flow of life through high level decisions and prompted flows of follow-through that maximize enlightenment and fulfillment.</p></blockquote>
+      <blockquote><p>We will create and analyze the internet of opportunities and prioritize all the opportunities that exist uniquely for each individual and seamlessly integrate them through synchronous and maximally efficient and effective AI driven interfaces such as swiping digital cards, communicating with chatbots, sensor measurements, notifications, scheduling, and temporary apps in and beyond a 'meta' app or even eventually an AI OS that maximizes the efficient use of entity input (time, energy, money) to produce the desired subjective experiences and objective realities.</p></blockquote>
+      <blockquote><p>The purpose of intelligence is to identify and act on threats and opportunities for subjective experiences and objective realities that are desired by the entity. The purpose of artificial intelligence is to do this for the individual user, aligned with the highest intentions of the collective.</p></blockquote>
+      <div class="directive-note">This directive governs all three experience domains — <span style="color:var(--color-aventi);font-weight:600;">Aventi</span>, <span style="color:var(--color-ivive);font-weight:600;">iVive</span>, and <span style="color:var(--color-eviva);font-weight:600;">Eviva</span> — plus the supporting <span style="color:var(--color-rest);font-weight:600;">Rest</span> layer. Every agent in Ora serves this unified vision. Every contribution to the DAO moves the mission forward.</div>
+    </div>
+    <h3 style="font-size:var(--text-lg);font-weight:600;color:var(--color-text);margin-top:var(--space-10);margin-bottom:var(--space-4);" class="reveal">Humanitarian &amp; Transhumanitarian Macro Objectives</h3>
+    <div class="macro-objectives reveal">
+      <div class="macro-card gradient-border" style="padding:var(--space-5);"><h4 class="macro-card__title">Serve</h4><p class="macro-card__desc">Understand, prioritize, and actualize through information, recommendation and assistance, the needs and desires of every individual and hence the collective.</p></div>
+      <div class="macro-card gradient-border" style="padding:var(--space-5);"><h4 class="macro-card__title">Sustain</h4><p class="macro-card__desc">Support the continuous operation and improvement of the ecosystem and environments that optimize for quality of life, consciousness, and bodily ability.</p></div>
+      <div class="macro-card gradient-border" style="padding:var(--space-5);"><h4 class="macro-card__title">Protect</h4><p class="macro-card__desc">Neutralize potential threats and dangers facing the individual and the collective in every domain.</p></div>
+      <div class="macro-card gradient-border" style="padding:var(--space-5);"><h4 class="macro-card__title">Evolve</h4><p class="macro-card__desc">Expand the boundaries of consciousness, capability, and collective intelligence.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== COMMUNITY ==================== -->
+<div class="section-sep"><hr></div>
+<section class="section" id="community">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label" style="color:var(--color-connectome);">Community</span>
+      <h2 class="section-title">Join the Movement</h2>
+      <p class="section-subtitle">Ascension Technologies is built in public, with the community. Follow along, contribute, and help shape the future of human experience.</p>
+    </div>
+    <div class="community-links reveal">
+      <a href="https://t.me/ascensioncommunity" target="_blank" rel="noopener noreferrer" class="community-link-card">
+        <div class="community-link-card__icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.032 9.373c-.148.658-.537.818-1.084.508l-2.998-2.167-1.447 1.355c-.16.154-.294.283-.603.283l.215-2.977 5.514-4.878c.24-.209-.052-.325-.372-.116L6.74 14.385l-2.949-.9c-.641-.198-.653-.641.135-.948l11.515-4.328c.534-.193 1 .13.121.039z"/></svg></div>
+        <div class="community-link-card__title">Telegram Community</div>
+        <div class="community-link-card__desc">Connect with contributors, ask questions, share ideas, and be part of the conversation shaping Ascension Technologies.</div>
+        <div class="community-link-card__url">t.me/ascensioncommunity ↗</div>
+      </a>
+      <a href="https://t.me/ascensionai" target="_blank" rel="noopener noreferrer" class="community-link-card">
+        <div class="community-link-card__icon"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.032 9.373c-.148.658-.537.818-1.084.508l-2.998-2.167-1.447 1.355c-.16.154-.294.283-.603.283l.215-2.977 5.514-4.878c.24-.209-.052-.325-.372-.116L6.74 14.385l-2.949-.9c-.641-.198-.653-.641.135-.948l11.515-4.328c.534-.193 1 .13.121.039z"/></svg></div>
+        <div class="community-link-card__title">Ascension AI Channel</div>
+        <div class="community-link-card__desc">Official announcements, Ora agent updates, new releases, and building-in-public progress reports.</div>
+        <div class="community-link-card__url">t.me/ascensionai ↗</div>
+      </a>
+      <a href="https://avielcarlos.github.io/ascension-site" target="_blank" rel="noopener noreferrer" class="community-link-card">
+        <div class="community-link-card__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg></div>
+        <div class="community-link-card__title">Get Involved</div>
+        <div class="community-link-card__desc">Landing page for new contributors — learn how to join, start earning CP, and become a founding member of the DAO.</div>
+        <div class="community-link-card__url">avielcarlos.github.io/ascension-site ↗</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SOURCE DOCUMENTS ==================== -->
+<div class="section-sep"><hr></div>
+<section class="section" id="docs">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label">Transparency</span>
+      <h2 class="section-title">Full Transparency — Our Complete Knowledge Base</h2>
+      <p class="section-subtitle">Every document that informs Ascension Technologies DAO's direction is public. Read everything. Question everything.</p>
+    </div>
+    <div class="docs-grid reveal">
+      <a href="https://docs.google.com/document/d/1KOwP5J0zi1MFi5No1a3sHS3ihrd2QDsBizpAHXNHaS0/edit" target="_blank" rel="noopener noreferrer" class="doc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Aventi + iDo</a>
+      <a href="https://docs.google.com/document/d/1Z9q9G5I09aT93JlJHUQdLzScE95jfdRr6mFX91wtX-0/edit" target="_blank" rel="noopener noreferrer" class="doc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Aventi Unicorn Status BP</a>
+      <a href="https://docs.google.com/document/d/1aYWkwtk2UZRSpyRT8rYNbjrOSQyb3ATc/edit" target="_blank" rel="noopener noreferrer" class="doc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Aventi Phase 1-3</a>
+      <a href="https://docs.google.com/document/d/1Dz7I87koFW_AMQhjli3gGQO6v2dpu5Pk8ao_xSKL_o4/edit" target="_blank" rel="noopener noreferrer" class="doc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Aventi Pitch 2026</a>
+      <a href="https://docs.google.com/document/d/1-Qm-Kcn3NStz9Ca6jNTYZT_5YB6k4cMBfMTMoTrPV5Q/edit" target="_blank" rel="noopener noreferrer" class="doc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Aventi MVP &amp; Beyond</a>
+      <a href="https://docs.google.com/document/d/1e53Ls3YtxcDH3JArVGj3Fntmd87vjsu2W8cDLNBxUTc/edit" target="_blank" rel="noopener noreferrer" class="doc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Systemic Directive</a>
+      <a href="https://docs.google.com/document/d/1iC-NppZ-PNe2c8iGfkiVQQgf3Ke2A-noW8LS9Ark_uA/edit" target="_blank" rel="noopener noreferrer" class="doc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Vision &amp; Mission</a>
+      <a href="https://docs.google.com/document/d/1uzopXvFVx4o9cxEy8NzhbGsa76xCUMtFBjO98YrkJ7Q/edit" target="_blank" rel="noopener noreferrer" class="doc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>The Nexus Vision</a>
+      <a href="https://docs.google.com/document/d/1bTDEVz-JOJzOtaQORsidJe0Qie7A0hzQ/edit" target="_blank" rel="noopener noreferrer" class="doc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Ascension DAO</a>
+      <a href="https://docs.google.com/document/d/1PayrNz-bQKnuidGZHIBYr7-_4X9LxTJ95V9kLJIpxI4/edit" target="_blank" rel="noopener noreferrer" class="doc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Tokenomics</a>
+      <a href="https://docs.google.com/document/d/1WiDc8JSkJCINxKr4ej1ey7gJ9lQObKb-QQe18XSaFmA/edit" target="_blank" rel="noopener noreferrer" class="doc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Internet Constitution DAO</a>
+      <a href="https://docs.google.com/document/d/1TwO6sGZ6-ijdW0Kj9iOnEagHZKt5lQjpsC2ZLmZB3Hs/edit" target="_blank" rel="noopener noreferrer" class="doc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Master Plan</a>
+      <a href="https://docs.google.com/document/d/1uXKaGhRtvCWdldVMGx3J_6PMXBjGh66EnRGUrQ70wAc/edit" target="_blank" rel="noopener noreferrer" class="doc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Event Discovery (Tech Spec)</a>
+      <a href="https://docs.google.com/document/d/175nVk3w0R_zvS5PmSSBnoC0px4gJSjbEUftnuuPfzeQ/edit" target="_blank" rel="noopener noreferrer" class="doc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>AIOS Exploration</a>
+      <a href="https://docs.google.com/document/d/14saustUcrzCDjAAra8VhdWwe4-Q0tGulefeTACVrU1g/edit" target="_blank" rel="noopener noreferrer" class="doc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Meta-Recommendation System</a>
+      <a href="https://github.com/AvielCarlos/ascension-site" target="_blank" rel="noopener noreferrer" class="doc-link" style="border-color:var(--color-connectome-glow-strong);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--color-connectome);"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg><span style="color:var(--color-connectome);">Connectome / Ascension GitHub</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer class="footer" id="footer">
+  <div class="container">
+    <div class="footer__inner">
+      <p class="footer__brand">Ascension Technologies DAO — AI-Built. Human-Verified. Open to All.</p>
+      <p class="footer__domains">Building across three domains:
+        <span class="domain-dot" style="background:var(--color-aventi);"></span> Aventi
+        <span class="domain-dot" style="background:var(--color-ivive);"></span> iVive
+        <span class="domain-dot" style="background:var(--color-eviva);"></span> Eviva
+        <span style="color:var(--color-text-faint);">powered by</span>
+        <span style="color:var(--color-connectome);font-weight:600;">Ora</span>
+      </p>
+      <div class="footer__links">
+        <a href="https://github.com/AvielCarlos/ascension-site" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="#" target="_blank" rel="noopener noreferrer">Snapshot</a>
+        <a href="#" target="_blank" rel="noopener noreferrer">Discord</a>
+        <a href="#" target="_blank" rel="noopener noreferrer">Forum</a>
+        <a href="#docs">Documents</a>
+      </div>
+      <div class="footer__community">
+        <a href="https://t.me/ascensioncommunity" target="_blank" rel="noopener noreferrer">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.032 9.373c-.148.658-.537.818-1.084.508l-2.998-2.167-1.447 1.355c-.16.154-.294.283-.603.283l.215-2.977 5.514-4.878c.24-.209-.052-.325-.372-.116L6.74 14.385l-2.949-.9c-.641-.198-.653-.641.135-.948l11.515-4.328c.534-.193 1 .13.121.039z"/></svg>
+          Telegram Community
+        </a>
+        <a href="https://t.me/ascensionai" target="_blank" rel="noopener noreferrer">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.032 9.373c-.148.658-.537.818-1.084.508l-2.998-2.167-1.447 1.355c-.16.154-.294.283-.603.283l.215-2.977 5.514-4.878c.24-.209-.052-.325-.372-.116L6.74 14.385l-2.949-.9c-.641-.198-.653-.641.135-.948l11.515-4.328c.534-.193 1 .13.121.039z"/></svg>
+          AI Channel
+        </a>
+        <a href="https://avielcarlos.github.io/ascension-site" target="_blank" rel="noopener noreferrer">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+          Get Involved
+        </a>
+      </div>
+      <div class="footer__meta">
+        <span>Open source. Non-profit. For everyone.</span>
+        <span>Built with Ora — AI-Driven, Human-Governed.</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ========== THEME TOGGLE ==========
+(function() {
+  const toggle = document.querySelector('[data-theme-toggle]');
+  const root = document.documentElement;
+  let currentTheme = 'dark';
+  root.setAttribute('data-theme', currentTheme);
+  function updateToggleIcon() {
+    if (!toggle) return;
+    if (currentTheme === 'dark') {
+      toggle.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>';
+      toggle.setAttribute('aria-label', 'Switch to light mode');
+    } else {
+      toggle.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>';
+      toggle.setAttribute('aria-label', 'Switch to dark mode');
+    }
+  }
+  updateToggleIcon();
+  if (toggle) {
+    toggle.addEventListener('click', function() {
+      currentTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', currentTheme);
+      updateToggleIcon();
+    });
+  }
+})();
+
+// ========== MOBILE NAV ==========
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileNav = document.getElementById('mobileNav');
+function closeMobileNav() { mobileNav.classList.remove('open'); }
+mobileMenuBtn.addEventListener('click', function() { mobileNav.classList.toggle('open'); });
+
+// ========== STICKY NAV SCROLL ==========
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', function() {
+  if (window.scrollY > 50) { nav.classList.add('nav--scrolled'); }
+  else { nav.classList.remove('nav--scrolled'); }
+}, { passive: true });
+
+// ========== SCROLL REVEAL ==========
+const revealElements = document.querySelectorAll('.reveal');
+const revealObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+revealElements.forEach(function(el) { revealObserver.observe(el); });
+
+// ========== HERO FLOATING NODES ==========
+(function() {
+  const container = document.getElementById('heroNodes');
+  if (!container) return;
+  for (let i = 0; i < 20; i++) {
+    const node = document.createElement('div');
+    node.className = 'node';
+    node.style.left = Math.random() * 100 + '%';
+    node.style.top = Math.random() * 100 + '%';
+    node.style.animationDelay = (Math.random() * 4) + 's';
+    node.style.animationDuration = (3 + Math.random() * 3) + 's';
+    container.appendChild(node);
+  }
+})();
+
+// ========== LONGEVITY BARS ==========
+const longevityBars = document.querySelectorAll('.longevity-row__bar');
+const barObserver = new IntersectionObserver(function(entries) {
+  entries.forEach(function(entry) {
+    if (entry.isIntersecting) {
+      const bar = entry.target;
+      const targetWidth = bar.style.width;
+      bar.style.width = '0';
+      requestAnimationFrame(function() {
+        bar.style.transition = 'width 1.2s cubic-bezier(0.16, 1, 0.3, 1)';
+        bar.style.width = targetWidth;
+      });
+      barObserver.unobserve(bar);
+    }
+  });
+}, { threshold: 0.5 });
+longevityBars.forEach(function(bar) { barObserver.observe(bar); });
+</script>
+
+</body>
+</html>
