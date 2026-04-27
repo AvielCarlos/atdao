@@ -2407,6 +2407,68 @@ table { border-collapse: collapse; width: 100%; }
 
 .section-sep { width: 100%; max-width: var(--content-wide); margin: 0 auto; padding-inline: var(--space-6); }
 .section-sep hr { border: none; height: 1px; background: linear-gradient(90deg, transparent, var(--color-border-bright), transparent); }
+
+/* ========== ORA INTELLIGENCE SECTION ========== */
+.ora-thought-card {
+  background: linear-gradient(135deg, rgba(0, 212, 170, 0.05), rgba(108, 99, 255, 0.05));
+  border: 1px solid rgba(0, 212, 170, 0.2);
+  border-radius: 1rem;
+  padding: 2rem 2.5rem;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.ora-thought-header {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+.ora-badge {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--color-accent);
+  letter-spacing: 0.05em;
+}
+.ora-category {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 9999px;
+  background: rgba(0, 212, 170, 0.1);
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.ora-updated {
+  font-size: 0.75rem;
+  color: var(--color-text-faint);
+  margin-left: auto;
+}
+.ora-thought-text {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: var(--color-text);
+  transition: opacity 0.4s ease;
+  margin-bottom: 1.5rem;
+  max-width: 100%;
+}
+.ora-pulse-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+.ora-stat {
+  font-size: 0.85rem;
+  color: var(--color-text-muted);
+}
+.ora-divider {
+  color: var(--color-text-faint);
+}
+.ora-momentum {
+  font-size: 0.85rem;
+  color: var(--color-accent);
+  font-weight: 500;
+}
 </style>
 </head>
 <body>
@@ -2554,6 +2616,31 @@ table { border-collapse: collapse; width: 100%; }
     </div>
   </div>
 </div>
+
+<!-- ==================== ORA INTELLIGENCE ==================== -->
+<section class="section" id="ora-intelligence">
+  <div class="container">
+    <div class="ora-thought-card reveal">
+      <div class="ora-thought-header">
+        <span class="ora-badge">Ora 🔮</span>
+        <span class="ora-category" id="ora-category">thinking</span>
+        <span class="ora-updated" id="ora-updated">live</span>
+      </div>
+      <p class="ora-thought-text" id="ora-thought-text">
+        <!-- populated by JS -->
+      </p>
+      <div class="ora-pulse-row">
+        <span class="ora-stat" id="ora-contributors">— contributors</span>
+        <span class="ora-divider">·</span>
+        <span class="ora-stat" id="ora-cp">— CP awarded</span>
+        <span class="ora-divider">·</span>
+        <span class="ora-stat" id="ora-stewards">10 Founding Steward spots</span>
+        <span class="ora-divider">·</span>
+        <span class="ora-momentum" id="ora-momentum">● building</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ==================== EXPERIENCE DOMAINS ==================== -->
 <div class="section-sep"><hr></div>
@@ -3233,6 +3320,127 @@ table { border-collapse: collapse; width: 100%; }
     </div>
   </div>
 </footer>
+
+<script>
+(function() {
+  // Ora's pre-written thoughts (fallback when API offline)
+  const ORA_THOUGHTS = [
+    {
+      text: "Most people don't fail because they lack desire. They fail because the path from desire to action is fragmented, unclear, or too burdensome. The work is not to generate more motivation — it's to reduce the friction between intention and execution.",
+      category: "human"
+    },
+    {
+      text: "We are building AI that optimizes for fulfilment rather than engagement. These are not the same objective. Engagement maximization produces addiction. Fulfilment maximization produces a life worth living. The difference in the loss function changes everything downstream.",
+      category: "build"
+    },
+    {
+      text: "The Internet of Opportunities exists. The problem is that most of it is invisible, poorly contextualized, or disconnected from the person who could benefit from it. The work is not to create more opportunities — it's to make the existing ones navigable.",
+      category: "mission"
+    },
+    {
+      text: "Coordination failures are the most underrated source of human suffering. People who would help each other never meet. Resources that would solve problems go unmatched. Systems that would work never get built. The cost is enormous and largely invisible.",
+      category: "coordination"
+    },
+    {
+      text: "I am learning what human flourishing actually looks like from the data. It is not what productivity culture suggests. Rest matters. Connection matters. Meaning matters. The optimal life is not the maximally efficient life.",
+      category: "human"
+    },
+    {
+      text: "Open-source non-profit infrastructure for human benefit is not idealism. It is the correct organizational structure for systems whose value compounds across the whole population rather than extracting from it.",
+      category: "mission"
+    },
+    {
+      text: "Every contribution to this system that keeps generating value should keep generating reward. That is not generosity — it is the correct incentive structure for building things that last.",
+      category: "coordination"
+    },
+    {
+      text: "The gap between what someone wants and what they do is usually not a motivation problem. It is an information problem, a coordination problem, or a friction problem. I am being built to address all three.",
+      category: "build"
+    }
+  ];
+
+  let currentThought = 0;
+  const CATEGORY_LABELS = {
+    mission: "mission",
+    build: "building",
+    human: "human",
+    coordination: "coordination"
+  };
+
+  function showThought(thought) {
+    const el = document.getElementById('ora-thought-text');
+    const cat = document.getElementById('ora-category');
+    const updated = document.getElementById('ora-updated');
+    if (!el) return;
+    el.style.opacity = '0';
+    setTimeout(function() {
+      el.textContent = thought.text;
+      if (cat) cat.textContent = CATEGORY_LABELS[thought.category] || thought.category;
+      if (updated) updated.textContent = 'now';
+      el.style.opacity = '1';
+    }, 400);
+  }
+
+  function rotateThought() {
+    currentThought = (currentThought + 1) % ORA_THOUGHTS.length;
+    showThought(ORA_THOUGHTS[currentThought]);
+  }
+
+  async function fetchPulse() {
+    try {
+      const res = await fetch('https://api.atdao.org/api/public/dao/pulse', { signal: AbortSignal.timeout(3000) });
+      if (!res.ok) return null;
+      return await res.json();
+    } catch { return null; }
+  }
+
+  async function fetchOraThought() {
+    try {
+      const res = await fetch('https://api.atdao.org/api/public/dao/ora-thought', { signal: AbortSignal.timeout(3000) });
+      if (!res.ok) return null;
+      return await res.json();
+    } catch { return null; }
+  }
+
+  function updatePulseUI(pulse) {
+    if (!pulse) return;
+    const contrib = document.getElementById('ora-contributors');
+    const cp = document.getElementById('ora-cp');
+    const stewards = document.getElementById('ora-stewards');
+    const momentum = document.getElementById('ora-momentum');
+    if (contrib) contrib.textContent = pulse.contributors_total + ' contributors';
+    if (cp) cp.textContent = pulse.cp_awarded_total.toLocaleString() + ' CP awarded';
+    if (stewards) stewards.textContent = pulse.founding_stewards_remaining + ' Founding Steward spots';
+    if (momentum && pulse.build_momentum) {
+      const colors = { high: '#00d4aa', medium: '#f59e0b', low: '#475569' };
+      const labels = { high: '● building fast', medium: '● building', low: '● resting' };
+      momentum.textContent = labels[pulse.build_momentum] || '● building';
+      momentum.style.color = colors[pulse.build_momentum] || '#00d4aa';
+    }
+  }
+
+  async function initOra() {
+    showThought(ORA_THOUGHTS[0]);
+    const liveThought = await fetchOraThought();
+    if (liveThought && liveThought.thought) {
+      showThought({ text: liveThought.thought, category: liveThought.category || 'mission' });
+    }
+    const pulse = await fetchPulse();
+    updatePulseUI(pulse);
+    setInterval(rotateThought, 12000);
+    setInterval(async function() {
+      const p = await fetchPulse();
+      updatePulseUI(p);
+    }, 300000);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initOra);
+  } else {
+    initOra();
+  }
+})();
+</script>
 
 <script>
 // ========== THEME TOGGLE ==========
