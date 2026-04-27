@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Connectome — powered by Ora | Ascension Technologies DAO</title>
+<meta name="description" content="Connectome is an AI-native mobile OS that learns you, connects your world, and evolves with you. Powered by Ora — your personal AI brain.">
+<meta property="og:title" content="Connectome — powered by Ora">
+<meta property="og:description" content="An AI-native mobile experience. Discover, explore, journal, and grow — guided by Ora.">
+<meta property="og:type" content="website">
+
+<link href="https://api.fontshare.com/v2/css?f[]=general-sans@300,400,500,600,700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --font-body: 'General Sans', 'Helvetica Neue', Arial, sans-serif;
+
+  --color-bg: #0a0a0f;
+  --color-surface: #0d1117;
+  --color-surface-2: #111827;
+  --color-surface-3: #161b2e;
+  --color-border: #1e293b;
+  --color-border-bright: #2d3a50;
+  --color-text: #e2e8f0;
+  --color-text-muted: #94a3b8;
+  --color-text-faint: #475569;
+  --color-accent: #00d4aa;
+
+  --color-connectome: #A855F7;
+  --color-connectome-glow: rgba(168, 85, 247, 0.15);
+  --color-connectome-glow-strong: rgba(168, 85, 247, 0.25);
+  --color-ora: #F59E0B;
+  --color-ora-glow: rgba(245, 158, 11, 0.15);
+
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+
+  --transition: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: var(--font-body);
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.6;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── LAYOUT ── */
+.container {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* ── NAV ── */
+nav {
+  border-bottom: 1px solid var(--color-border);
+  padding: 1rem 0;
+}
+nav .inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.nav-logo {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+.nav-logo:hover { color: var(--color-text); }
+.nav-sep {
+  color: var(--color-text-faint);
+  font-size: 0.875rem;
+}
+.nav-current {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-connectome);
+}
+
+/* ── HERO ── */
+.hero {
+  padding: 5rem 0 3rem;
+  text-align: center;
+}
+
+.hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--color-connectome-glow);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  color: var(--color-connectome);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.75rem;
+}
+.hero-badge .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--color-connectome);
+  animation: pulse 2s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(0.85); }
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 5vw + 1rem, 4rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.5rem;
+}
+.hero h1 .gradient {
+  background: linear-gradient(135deg, var(--color-connectome) 0%, var(--color-ora) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.hero-sub {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  color: var(--color-text-muted);
+  margin-bottom: 0.5rem;
+}
+.hero-sub .ora-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: var(--color-ora-glow);
+  border: 1px solid rgba(245, 158, 11, 0.3);
+  color: var(--color-ora);
+  padding: 0.15rem 0.6rem;
+  border-radius: var(--radius-full);
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.hero-desc {
+  font-size: 1rem;
+  color: var(--color-text-muted);
+  max-width: 480px;
+  margin: 1.5rem auto 0;
+}
+
+/* ── CTA BUTTONS ── */
+.cta-group {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin: 2.5rem 0;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-body);
+  font-size: 0.9375rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--transition);
+  border: none;
+}
+
+.btn-primary {
+  background: var(--color-connectome);
+  color: #fff;
+  box-shadow: 0 0 0 0 var(--color-connectome-glow-strong);
+}
+.btn-primary:hover {
+  background: #9333ea;
+  box-shadow: 0 0 24px 4px var(--color-connectome-glow-strong);
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background: var(--color-surface-2);
+  color: var(--color-text);
+  border: 1px solid var(--color-border-bright);
+}
+.btn-secondary:hover {
+  border-color: var(--color-connectome);
+  color: var(--color-connectome);
+  transform: translateY(-1px);
+}
+
+.btn-dao {
+  background: linear-gradient(135deg, #229ED9 0%, #2AABEE 100%);
+  color: #fff;
+}
+.btn-dao:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: 0 0 20px rgba(42, 171, 238, 0.35);
+}
+
+/* ── SECTION TITLES ── */
+.section {
+  padding: 3.5rem 0;
+  border-top: 1px solid var(--color-border);
+}
+.section-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-text-faint);
+  margin-bottom: 1.5rem;
+}
+
+/* ── TABS GRID ── */
+.tabs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.tab-card {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xl);
+  padding: 1.25rem 1.25rem 1rem;
+  transition: border-color var(--transition), transform var(--transition);
+}
+.tab-card:hover {
+  border-color: var(--color-border-bright);
+  transform: translateY(-2px);
+}
+
+.tab-icon {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+.tab-name {
+  font-weight: 700;
+  font-size: 0.9375rem;
+  margin-bottom: 0.25rem;
+}
+.tab-desc {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* ── QR SECTION ── */
+.qr-section {
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-2xl);
+  padding: 2rem;
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.qr-box {
+  flex-shrink: 0;
+  width: 140px;
+  height: 140px;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.qr-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.qr-placeholder {
+  font-size: 3rem;
+  opacity: 0.3;
+}
+
+.qr-info { flex: 1; min-width: 200px; }
+.qr-info h3 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+.qr-info p {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}
+
+.expo-link {
+  font-size: 0.75rem;
+  color: var(--color-text-faint);
+  word-break: break-all;
+  font-family: monospace;
+  background: var(--color-surface-3);
+  padding: 0.4rem 0.6rem;
+  border-radius: var(--radius-md);
+  display: block;
+  margin-top: 0.5rem;
+}
+
+/* ── API STATUS ── */
+.api-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--color-surface-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-full);
+  padding: 0.35rem 0.8rem;
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  font-family: monospace;
+  margin-bottom: 1rem;
+}
+.api-pill .status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--color-ora);
+  flex-shrink: 0;
+}
+
+/* ── TECH STACK ── */
+.stack-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+.stack-chip {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-text-muted);
+  background: var(--color-surface-3);
+  border: 1px solid var(--color-border);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+}
+
+/* ── DAO CTA ── */
+.dao-cta {
+  background: linear-gradient(135deg, rgba(108,99,255,0.1) 0%, rgba(168,85,247,0.1) 100%);
+  border: 1px solid rgba(108, 99, 255, 0.25);
+  border-radius: var(--radius-2xl);
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+.dao-cta h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+.dao-cta p {
+  color: var(--color-text-muted);
+  max-width: 420px;
+  margin: 0 auto 1.5rem;
+  font-size: 0.9375rem;
+}
+
+/* ── FOOTER ── */
+footer {
+  border-top: 1px solid var(--color-border);
+  padding: 2rem 0;
+  margin-top: 4rem;
+}
+footer .inner {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+footer .footer-text {
+  font-size: 0.8125rem;
+  color: var(--color-text-faint);
+}
+footer a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 0.8125rem;
+  transition: color var(--transition);
+}
+footer a:hover { color: var(--color-text); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 480px) {
+  .qr-section { flex-direction: column; align-items: flex-start; }
+  .tabs-grid { grid-template-columns: 1fr 1fr; }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="inner">
+    <a href="https://atdao.org" class="nav-logo">Ascension Technologies DAO</a>
+    <span class="nav-sep">/</span>
+    <span class="nav-current">Connectome</span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="container">
+  <section class="hero">
+    <div class="hero-badge">
+      <span class="dot"></span>
+      AI.OS Mobile Experience
+    </div>
+
+    <h1>
+      <span class="gradient">Connectome</span>
+    </h1>
+    <p class="hero-sub">
+      powered by <span class="ora-badge">✦ Ora</span>
+    </p>
+
+    <p class="hero-desc">
+      An AI-native mobile OS that learns who you are, maps your world, and
+      evolves with you — one interaction at a time.
+    </p>
+
+    <div class="cta-group">
+      <a href="exp://connectome-backend.up.railway.app" class="btn btn-primary">
+        📱 Open in Expo Go
+      </a>
+      <a href="https://github.com/AvielCarlos/connectome-backend" class="btn btn-secondary" target="_blank">
+        View Source
+      </a>
+    </div>
+
+    <div class="api-pill">
+      <span class="status-dot"></span>
+      https://connectome-backend.up.railway.app
+    </div>
+  </section>
+
+  <!-- WHAT IS CONNECTOME -->
+  <section class="section">
+    <p class="section-title">What is Connectome</p>
+    <p style="color: var(--color-text-muted); font-size: 0.9375rem; max-width: 560px; line-height: 1.7;">
+      Connectome is your personal AI operating system — six interconnected modules
+      that together form a living map of your goals, world, mind, and community.
+      Ora is the AI brain that ties it all together, learning from every session
+      and growing more attuned to you over time.
+    </p>
+  </section>
+
+  <!-- 6 TABS -->
+  <section class="section">
+    <p class="section-title">Six modules. One brain.</p>
+    <div class="tabs-grid">
+      <div class="tab-card">
+        <div class="tab-icon">🔍</div>
+        <div class="tab-name">Discover</div>
+        <div class="tab-desc">AI-curated content and ideas tailored to your growth path.</div>
+      </div>
+      <div class="tab-card">
+        <div class="tab-icon">🗺️</div>
+        <div class="tab-name">Explore</div>
+        <div class="tab-desc">Real-world places, events, and experiences mapped to your interests.</div>
+      </div>
+      <div class="tab-card">
+        <div class="tab-icon">🎯</div>
+        <div class="tab-name">Goals</div>
+        <div class="tab-desc">Set intentions, track milestones, and let Ora coach your progress.</div>
+      </div>
+      <div class="tab-card">
+        <div class="tab-icon">📓</div>
+        <div class="tab-name">Journal</div>
+        <div class="tab-desc">Reflective journaling with mood tracking and AI-powered insight.</div>
+      </div>
+      <div class="tab-card">
+        <div class="tab-icon">✦</div>
+        <div class="tab-name">Ora</div>
+        <div class="tab-desc">Your personal AI — ask anything, plan anything, become anything.</div>
+      </div>
+      <div class="tab-card">
+        <div class="tab-icon">⬡</div>
+        <div class="tab-name">You + DAO</div>
+        <div class="tab-desc">Your identity layer, plus governance in the Ascension Technologies DAO.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPEN IN EXPO GO -->
+  <section class="section">
+    <p class="section-title">Run it now</p>
+    <div class="qr-section">
+      <div class="qr-box">
+        <!-- QR code generated via Google Charts API pointing to the Expo deep link -->
+        <img
+          src="https://chart.googleapis.com/chart?chs=280x280&cht=qr&chl=exp%3A%2F%2Fconnectome-backend.up.railway.app&choe=UTF-8"
+          alt="QR code — scan with Expo Go"
+          loading="lazy"
+        />
+      </div>
+      <div class="qr-info">
+        <h3>Scan with Expo Go</h3>
+        <p>
+          Install <strong>Expo Go</strong> on your iPhone or Android, then scan the QR
+          code or tap the button below to load Connectome instantly — no App Store required.
+        </p>
+        <a href="exp://connectome-backend.up.railway.app" class="btn btn-primary" style="display:inline-flex; margin-bottom: 0.75rem;">
+          📱 Open in Expo Go
+        </a>
+        <span class="expo-link">exp://connectome-backend.up.railway.app</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- TECH STACK -->
+  <section class="section">
+    <p class="section-title">Built on</p>
+    <p style="color: var(--color-text-muted); font-size: 0.875rem; margin-bottom: 0.5rem;">
+      Open-source stack. AI-native from the ground up.
+    </p>
+    <div class="stack-row">
+      <span class="stack-chip">FastAPI</span>
+      <span class="stack-chip">PostgreSQL + pgvector</span>
+      <span class="stack-chip">Redis</span>
+      <span class="stack-chip">OpenAI GPT-4</span>
+      <span class="stack-chip">React Native / Expo</span>
+      <span class="stack-chip">Railway</span>
+      <span class="stack-chip">Python 3.12</span>
+      <span class="stack-chip">asyncpg</span>
+    </div>
+  </section>
+
+  <!-- DAO CTA -->
+  <section class="section">
+    <div class="dao-cta">
+      <h2>This is just the beginning.</h2>
+      <p>
+        Connectome is an Ascension Technologies DAO project. Join us to vote on features,
+        contribute code, and shape the future of human-AI interaction.
+      </p>
+      <a href="https://t.me/ascensiontechai" class="btn btn-dao" target="_blank">
+        ✈️ Join the DAO on Telegram
+      </a>
+    </div>
+  </section>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="inner">
+    <span class="footer-text">
+      Connectome © 2025 · Ascension Technologies DAO · Open Source
+    </span>
+    <div style="display:flex; gap: 1.25rem;">
+      <a href="https://atdao.org">atdao.org</a>
+      <a href="https://github.com/AvielCarlos/connectome-backend" target="_blank">GitHub</a>
+      <a href="https://t.me/ascensiontechai" target="_blank">Telegram</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
