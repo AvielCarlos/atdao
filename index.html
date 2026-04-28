@@ -2469,6 +2469,209 @@ table { border-collapse: collapse; width: 100%; }
   color: var(--color-accent);
   font-weight: 500;
 }
+
+/* ========== REPO CARDS ========== */
+.repo-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  margin: var(--space-10) 0 var(--space-8);
+}
+
+@media (min-width: 640px) {
+  .repo-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+.repo-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  padding: var(--space-6);
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  text-decoration: none;
+  color: var(--color-text);
+  transition: all var(--transition-interactive);
+  position: relative;
+  overflow: hidden;
+}
+
+.repo-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--color-connectome), var(--color-ora));
+  opacity: 0;
+  transition: opacity var(--transition-interactive);
+}
+
+.repo-card:hover {
+  border-color: var(--color-connectome);
+  box-shadow: 0 4px 24px var(--color-connectome-glow);
+  transform: translateY(-3px);
+  color: var(--color-text);
+}
+
+.repo-card:hover::before { opacity: 1; }
+
+.repo-card__icon {
+  font-size: 1.75rem;
+  line-height: 1;
+}
+
+.repo-card__name {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text);
+  font-family: 'SF Mono', 'Fira Code', 'Fira Mono', monospace;
+}
+
+.repo-card__desc {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  flex: 1;
+}
+
+.repo-card__lang {
+  font-size: var(--text-xs);
+  color: var(--color-connectome);
+  font-weight: 600;
+}
+
+.repo-card__link {
+  font-size: var(--text-xs);
+  color: var(--color-connectome);
+  font-weight: 600;
+  opacity: 0;
+  transition: opacity var(--transition-interactive);
+}
+
+.repo-card:hover .repo-card__link { opacity: 1; }
+
+.contribute-cta {
+  text-align: center;
+  padding: var(--space-5);
+  background: rgba(168, 85, 247, 0.04);
+  border: 1px solid rgba(168, 85, 247, 0.12);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.contribute-cta a {
+  color: var(--color-connectome);
+  font-weight: 600;
+}
+
+.contribute-cta a:hover { color: var(--color-ora); }
+
+/* ========== WHATS LIVE SECTION ========== */
+.whats-live-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+  margin-top: var(--space-8);
+}
+
+@media (min-width: 768px) {
+  .whats-live-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.live-item {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: rgba(0, 212, 170, 0.04);
+  border: 1px solid rgba(0, 212, 170, 0.12);
+  border-radius: var(--radius-lg);
+  transition: border-color var(--transition-interactive);
+}
+
+.live-item:hover {
+  border-color: rgba(0, 212, 170, 0.3);
+}
+
+.live-item__dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-accent);
+  flex-shrink: 0;
+  margin-top: 6px;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+.live-item__content {}
+
+.live-item__title {
+  font-size: var(--text-sm);
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-1);
+}
+
+.live-item__desc {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  line-height: 1.5;
+}
+
+/* ========== SERVICES SECTION ========== */
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-5);
+  margin-top: var(--space-8);
+}
+
+@media (min-width: 640px) {
+  .services-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .services-grid { grid-template-columns: repeat(4, 1fr); }
+}
+
+.service-card {
+  padding: var(--space-5);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  transition: all var(--transition-interactive);
+}
+
+.service-card:hover {
+  border-color: var(--color-ora);
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.12);
+  transform: translateY(-2px);
+}
+
+.service-card__icon { font-size: 1.5rem; margin-bottom: var(--space-3); }
+.service-card__title { font-size: var(--text-sm); font-weight: 700; color: var(--color-text); margin-bottom: var(--space-2); }
+.service-card__desc { font-size: var(--text-xs); color: var(--color-text-muted); line-height: 1.5; }
+
+.services-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+  margin-top: var(--space-6);
+  padding: var(--space-4) var(--space-5);
+  background: rgba(245, 158, 11, 0.06);
+  border: 1px solid rgba(245, 158, 11, 0.2);
+  border-radius: var(--radius-lg);
+}
+
+.services-meta__item {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.services-meta__item strong { color: var(--color-ora); }
 </style>
 </head>
 <body>
@@ -2486,14 +2689,13 @@ table { border-collapse: collapse; width: 100%; }
     </a>
 
     <ul class="nav__links">
-      <li><a href="#domains">Domains</a></li>
+      <li><a href="#whats-live" style="color:#00d4aa;">iDo App ⚡</a></li>
       <li><a href="#connectome">Ora</a></li>
-      <li><a href="#user-dao" style="color:#00d4aa;">Earn CP</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#user-dao">Earn CP</a></li>
       <li><a href="#vision">Vision</a></li>
-      <li><a href="#how-it-works">How It Works</a></li>
-      <li><a href="#contributions">Contribute</a></li>
-      <li><a href="#governance">Governance</a></li>
-      <li><a href="#directive">Directive</a></li>
+      <li><a href="#contributions">DAO</a></li>
+      <li><a href="#repos">Repos</a></li>
       <li><a href="https://t.me/ascensiontechai" target="_blank" rel="noopener noreferrer" class="nav__link--community">Community ↗</a></li>
     </ul>
 
@@ -2517,15 +2719,15 @@ table { border-collapse: collapse; width: 100%; }
 
 <!-- Mobile nav -->
 <div class="mobile-nav" id="mobileNav">
-  <a href="#domains" onclick="closeMobileNav()">Domains</a>
-  <a href="#connectome" onclick="closeMobileNav()">Connectome & Ora</a>
+  <a href="#whats-live" onclick="closeMobileNav()" style="color:#00d4aa;font-weight:700;">⚡ iDo App — Live Now</a>
+  <a href="#connectome" onclick="closeMobileNav()">Ora — AI Brain</a>
+  <a href="#services" onclick="closeMobileNav()">Nea Services</a>
   <a href="#user-dao" onclick="closeMobileNav()" style="color:#00d4aa;font-weight:700;">✦ Earn CP as a User</a>
   <a href="#vision" onclick="closeMobileNav()">Vision</a>
   <a href="#how-it-works" onclick="closeMobileNav()">How It Works</a>
   <a href="#contributions" onclick="closeMobileNav()">Contribute & Earn</a>
   <a href="#governance" onclick="closeMobileNav()">Governance</a>
-  <a href="#ai-builders" onclick="closeMobileNav()">For AI Builders</a>
-  <a href="#directive" onclick="closeMobileNav()">Directive</a>
+  <a href="#repos" onclick="closeMobileNav()">Open Source Repos</a>
   <a href="#docs" onclick="closeMobileNav()">Documents</a>
   <a href="https://t.me/ascensiontechai" target="_blank" rel="noopener noreferrer" style="color:var(--color-connectome);">Telegram Community ↗</a>
   <a href="https://t.me/ascensionai" target="_blank" rel="noopener noreferrer" style="color:var(--color-connectome);">Telegram Channel ↗</a>
@@ -2558,18 +2760,22 @@ table { border-collapse: collapse; width: 100%; }
       </svg>
     </div>
 
-    <p class="hero__tagline">AI-Built. Human-Verified. Open to All.</p>
-    <p class="hero__subtitle">An open-source non-profit DAO where AI agents build the future of human experience — and the global community votes to shape it.</p>
+    <p class="hero__tagline">The AI.OS for Human Fulfillment — Live Now.</p>
+    <p class="hero__subtitle">iDo is live. Ora learns who you are, 36 autonomous agents run 24/7, and the global community governs what gets built next.</p>
 
     <div class="hero__ctas">
-      <a href="#contributions" class="btn btn--primary">Join &amp; Contribute</a>
+      <a href="https://avielcarlos.github.io/connectome-web/" target="_blank" rel="noopener noreferrer" class="btn btn--primary" style="background:linear-gradient(135deg,#A855F7,#7C3AED);font-size:1rem;padding:0.85rem 2rem;">
+        🧠 Try iDo Free
+      </a>
+      <a href="https://github.com/AvielCarlos/connectome-backend/releases/download/v0.1.0/iDo.apk" target="_blank" rel="noopener noreferrer" class="btn btn--primary" style="background:linear-gradient(135deg,#16a34a,#15803d);font-size:1rem;padding:0.85rem 2rem;">
+        📱 Download Android APK
+      </a>
       <a href="https://t.me/ascensiontechai" target="_blank" rel="noopener noreferrer" class="btn btn--community">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.562 8.248l-2.032 9.373c-.148.658-.537.818-1.084.508l-2.998-2.167-1.447 1.355c-.16.154-.294.283-.603.283l.215-2.977 5.514-4.878c.24-.209-.052-.325-.372-.116L6.74 14.385l-2.949-.9c-.641-.198-.653-.641.135-.948l11.515-4.328c.534-.193 1 .13.121.039z"/>
         </svg>
         Join Community
       </a>
-      <a href="#directive" class="btn btn--secondary">Read the Directive</a>
     </div>
   </div>
 </section>
@@ -2584,22 +2790,22 @@ table { border-collapse: collapse; width: 100%; }
     <div class="metric-item">
       <div class="metric-item__dot"></div>
       <div>
-        <div class="metric-item__value">11</div>
-        <div class="metric-item__label">Ora Agents Active</div>
+        <div class="metric-item__value" id="metric-agents">36</div>
+        <div class="metric-item__label">AI Agents Running 24/7</div>
       </div>
     </div>
     <div class="metric-item">
       <div class="metric-item__dot"></div>
       <div>
-        <div class="metric-item__value">43 Repos</div>
-        <div class="metric-item__label">GitHub Outreach</div>
+        <div class="metric-item__value" id="metric-repos">3 Public Repos</div>
+        <div class="metric-item__label">Open Source</div>
       </div>
     </div>
     <div class="metric-item">
       <div class="metric-item__dot"></div>
       <div>
-        <div class="metric-item__value">Phase 1</div>
-        <div class="metric-item__label">Aventi — Shipping</div>
+        <div class="metric-item__value">iDo Live ⚡</div>
+        <div class="metric-item__label">AI.OS for Human Fulfillment</div>
       </div>
     </div>
     <div class="metric-item">
@@ -2640,6 +2846,86 @@ table { border-collapse: collapse; width: 100%; }
         <span class="ora-divider">·</span>
         <span class="ora-momentum" id="ora-momentum">● building</span>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== WHAT'S LIVE ==================== -->
+<div class="section-sep"><hr></div>
+<section class="section" id="whats-live" style="background:linear-gradient(180deg,rgba(168,85,247,0.04) 0%,transparent 100%);">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label" style="color:var(--color-connectome);">&#9670; Live Now</span>
+      <h2 class="section-title">iDo is live — the AI.OS for Human Fulfillment</h2>
+      <p class="section-subtitle">Built on the Connectome intelligence platform. Ora learns who you are and helps you get what you want. Everything below is running in production today.</p>
+    </div>
+
+    <div class="whats-live-grid reveal">
+      <div class="live-item">
+        <div class="live-item__dot"></div>
+        <div class="live-item__content">
+          <div class="live-item__title">iDo Web App</div>
+          <div class="live-item__desc">Goal setting, Ora AI chat, personalized feed — <a href="https://avielcarlos.github.io/connectome-web/" target="_blank" style="color:var(--color-connectome);">launch now ↗</a></div>
+        </div>
+      </div>
+      <div class="live-item">
+        <div class="live-item__dot"></div>
+        <div class="live-item__content">
+          <div class="live-item__title">iDo Android App</div>
+          <div class="live-item__desc">Native Android app — <a href="https://github.com/AvielCarlos/connectome-backend/releases/download/v0.1.0/iDo.apk" target="_blank" style="color:var(--color-connectome);">download APK ↗</a></div>
+        </div>
+      </div>
+      <div class="live-item">
+        <div class="live-item__dot"></div>
+        <div class="live-item__content">
+          <div class="live-item__title">Ora — AI Brain</div>
+          <div class="live-item__desc">36 autonomous agents running 24/7, learning, building, and improving the system</div>
+        </div>
+      </div>
+      <div class="live-item">
+        <div class="live-item__dot"></div>
+        <div class="live-item__content">
+          <div class="live-item__title">Self-Improving System</div>
+          <div class="live-item__desc">A/B tests every aspect of the product, evolves daily without human intervention</div>
+        </div>
+      </div>
+      <div class="live-item">
+        <div class="live-item__dot"></div>
+        <div class="live-item__content">
+          <div class="live-item__title">DAO Contributor Rewards</div>
+          <div class="live-item__desc">CP reward system live — earn points for building with us, voting, and using the app</div>
+        </div>
+      </div>
+      <div class="live-item">
+        <div class="live-item__dot"></div>
+        <div class="live-item__content">
+          <div class="live-item__title">Nea Services</div>
+          <div class="live-item__desc">AI-powered research, code review, and content creation — delivered autonomously</div>
+        </div>
+      </div>
+      <div class="live-item" style="border-color:rgba(245,158,11,0.25);background:rgba(245,158,11,0.05);">
+        <div class="live-item__dot" style="background:var(--color-ora);"></div>
+        <div class="live-item__content">
+          <div class="live-item__title" style="color:var(--color-ora);">Executive Council</div>
+          <div class="live-item__desc">8 AI agents managing the business autonomously: CFO · CMO · CPO · CTO · COO · Community · Strategy · Council</div>
+        </div>
+      </div>
+      <div class="live-item" style="border-color:rgba(245,158,11,0.25);background:rgba(245,158,11,0.05);">
+        <div class="live-item__dot" style="background:var(--color-ora);"></div>
+        <div class="live-item__content">
+          <div class="live-item__title" style="color:var(--color-ora);">Founding Steward Path</div>
+          <div class="live-item__desc">First 10 contributors to 3,000 CP earn permanent governance seats — real tasks available now</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;gap:var(--space-4);justify-content:center;flex-wrap:wrap;margin-top:var(--space-8);" class="reveal">
+      <a href="https://avielcarlos.github.io/connectome-web/" target="_blank" rel="noopener noreferrer" class="btn btn--primary" style="background:linear-gradient(135deg,#A855F7,#7C3AED);font-size:1rem;padding:0.85rem 2rem;">
+        🧠 Try iDo Free
+      </a>
+      <a href="https://github.com/AvielCarlos/connectome-backend/releases/download/v0.1.0/iDo.apk" target="_blank" rel="noopener noreferrer" class="btn btn--primary" style="background:linear-gradient(135deg,#16a34a,#15803d);font-size:1rem;padding:0.85rem 2rem;">
+        📱 Download Android APK
+      </a>
     </div>
   </div>
 </section>
@@ -2796,8 +3082,8 @@ table { border-collapse: collapse; width: 100%; }
         <p class="ora-hero__desc">Ora is not a single AI — it's an orchestrated network of specialized agents, each an expert in a domain of human experience. Together they power server-driven interfaces, personalized recommendations, impact measurement, and DAO governance — continuously learning from every user interaction.</p>
         <div class="ora-stat-row">
           <div class="ora-stat">
-            <span class="ora-stat__num">11</span>
-            <span class="ora-stat__label">Specialized Agents</span>
+            <span class="ora-stat__num">36</span>
+            <span class="ora-stat__label">Autonomous Agents</span>
           </div>
           <div class="ora-stat">
             <span class="ora-stat__num">3</span>
@@ -2961,6 +3247,52 @@ table { border-collapse: collapse; width: 100%; }
           GitHub Backend
         </a>
         <a href="https://t.me/ascensiontechai" target="_blank" rel="noopener noreferrer" class="btn btn--community">Join the Build</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== SERVICES (NEA) ==================== -->
+<div class="section-sep"><hr></div>
+<section class="section" id="services">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label" style="color:var(--color-ora);">&#9889; Work with Nea</span>
+      <h2 class="section-title">AI-Powered Services. Delivered Autonomously.</h2>
+      <p class="section-subtitle">Nea is Ascension Technologies' AI services arm. Every deliverable is AI-generated, human-reviewed, and shipped in 24-48 hours.</p>
+    </div>
+
+    <div class="services-grid reveal">
+      <div class="service-card">
+        <div class="service-card__icon">📊</div>
+        <div class="service-card__title">Research Reports</div>
+        <div class="service-card__desc">In-depth market research, competitive analysis, and industry deep-dives. Sourced, synthesized, and delivered fast.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-card__icon">🔧</div>
+        <div class="service-card__title">Code Reviews</div>
+        <div class="service-card__desc">Architecture reviews, security audits, and performance analysis for your codebase. Actionable recommendations included.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-card__icon">✏️</div>
+        <div class="service-card__title">Content Packs</div>
+        <div class="service-card__desc">Blog posts, social content, newsletters, and copy — tailored to your brand voice and optimized for engagement.</div>
+      </div>
+      <div class="service-card">
+        <div class="service-card__icon">🧩</div>
+        <div class="service-card__title">Data Analysis</div>
+        <div class="service-card__desc">Turn your raw data into insights. Charts, summaries, and recommendations — delivered as a clean report.</div>
+      </div>
+    </div>
+
+    <div class="services-meta reveal">
+      <div class="services-meta__item"><strong>From $29</strong></div>
+      <div class="services-meta__item">·</div>
+      <div class="services-meta__item"><strong>24-48h</strong> delivery</div>
+      <div class="services-meta__item">·</div>
+      <div class="services-meta__item">Email: <a href="mailto:nea@atdao.org" style="color:var(--color-ora);">nea@atdao.org</a></div>
+      <div class="services-meta__item" style="margin-left:auto;">
+        <a href="/services" class="btn btn--secondary" style="border-color:var(--color-ora);color:var(--color-ora);padding:0.5rem 1.25rem;font-size:var(--text-sm);">View Services →</a>
       </div>
     </div>
   </div>
@@ -3362,6 +3694,48 @@ table { border-collapse: collapse; width: 100%; }
       <a href="https://docs.google.com/document/d/175nVk3w0R_zvS5PmSSBnoC0px4gJSjbEUftnuuPfzeQ/edit" target="_blank" rel="noopener noreferrer" class="doc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>AIOS Exploration</a>
       <a href="https://docs.google.com/document/d/14saustUcrzCDjAAra8VhdWwe4-Q0tGulefeTACVrU1g/edit" target="_blank" rel="noopener noreferrer" class="doc-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>Meta-Recommendation System</a>
       <a href="https://github.com/AvielCarlos/ascension-site" target="_blank" rel="noopener noreferrer" class="doc-link" style="border-color:var(--color-connectome-glow-strong);"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="color:var(--color-connectome);"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/></svg><span style="color:var(--color-connectome);">Connectome / Ascension GitHub</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== OPEN SOURCE REPOS ==================== -->
+<div class="section-sep"><hr></div>
+<section class="section" id="repos">
+  <div class="container">
+    <div class="reveal">
+      <span class="section-label" style="color:var(--color-connectome);">Open Source</span>
+      <h2 class="section-title">Built in the open. Governed by everyone.</h2>
+      <p class="section-subtitle">Every line of code is public. Fork it, contribute to it, build on it.</p>
+    </div>
+
+    <div class="repo-grid reveal">
+      <a href="https://github.com/AvielCarlos/connectome-backend" target="_blank" rel="noopener noreferrer" class="repo-card">
+        <div class="repo-card__icon">⚡</div>
+        <div class="repo-card__name">connectome-backend</div>
+        <div class="repo-card__desc">Ora’s brain — FastAPI + PostgreSQL + Redis + 36 AI agents running autonomously 24/7. The intelligence layer powering iDo.</div>
+        <div class="repo-card__lang">Python · FastAPI</div>
+        <div class="repo-card__link">View on GitHub →</div>
+      </a>
+
+      <a href="https://github.com/AvielCarlos/connectome-web" target="_blank" rel="noopener noreferrer" class="repo-card">
+        <div class="repo-card__icon">🌐</div>
+        <div class="repo-card__name">connectome-web</div>
+        <div class="repo-card__desc">iDo web app — React + TypeScript + Vite. Goal setting, Ora AI chat, personalized feed. Deployed to GitHub Pages.</div>
+        <div class="repo-card__lang">TypeScript · React</div>
+        <div class="repo-card__link">View on GitHub →</div>
+      </a>
+
+      <a href="https://github.com/AvielCarlos/atdao" target="_blank" rel="noopener noreferrer" class="repo-card">
+        <div class="repo-card__icon">🏛️</div>
+        <div class="repo-card__name">atdao</div>
+        <div class="repo-card__desc">This website — Ascension Technologies DAO public presence. Pure HTML/CSS, fast, open, and community-maintained.</div>
+        <div class="repo-card__lang">HTML · CSS</div>
+        <div class="repo-card__link">View on GitHub →</div>
+      </a>
+    </div>
+
+    <div class="contribute-cta reveal">
+      <p>Want to contribute? <a href="https://github.com/AvielCarlos/connectome-backend/issues" target="_blank" rel="noopener noreferrer">Browse open issues</a> &nbsp;·&nbsp; <a href="https://t.me/ascensiontechai" target="_blank" rel="noopener noreferrer">Join the community</a> &nbsp;·&nbsp; <a href="https://avielcarlos.github.io/connectome-web/dao" target="_blank" rel="noopener noreferrer">Earn CP</a></p>
     </div>
   </div>
 </section>
