@@ -69,9 +69,9 @@
   --color-connectome: #A855F7;
   --color-connectome-glow: rgba(168, 85, 247, 0.15);
   --color-connectome-glow-strong: rgba(168, 85, 247, 0.25);
-  --color-ora: #F59E0B;
-  --color-ora-glow: rgba(245, 158, 11, 0.15);
-  --color-ora-glow-strong: rgba(245, 158, 11, 0.25);
+  --color-aura: #F59E0B;
+  --color-aura-glow: rgba(245, 158, 11, 0.15);
+  --color-aura-glow-strong: rgba(245, 158, 11, 0.25);
 }
 
 /* ========== DARK THEME (DEFAULT) ========== */
@@ -357,7 +357,7 @@ table { border-collapse: collapse; width: 100%; }
 }
 
 .nav__links a.nav__link--community:hover {
-  color: var(--color-ora);
+  color: var(--color-aura);
 }
 
 .nav__right {
@@ -671,7 +671,7 @@ table { border-collapse: collapse; width: 100%; }
 }
 
 .metric-item--founding .metric-item__dot {
-  background: var(--color-ora);
+  background: var(--color-aura);
   animation: pulse-dot-gold 2s ease-in-out infinite;
 }
 
@@ -681,7 +681,7 @@ table { border-collapse: collapse; width: 100%; }
 }
 
 .metric-item--founding .metric-item__value {
-  color: var(--color-ora);
+  color: var(--color-aura);
 }
 
 /* ========== DOMAINS SECTION ========== */
@@ -850,7 +850,7 @@ table { border-collapse: collapse; width: 100%; }
 
 .domain-card__status--building {
   background: rgba(245, 158, 11, 0.1);
-  color: var(--color-ora);
+  color: var(--color-aura);
   border: 1px solid rgba(245, 158, 11, 0.25);
 }
 
@@ -859,7 +859,7 @@ table { border-collapse: collapse; width: 100%; }
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--color-ora);
+  background: var(--color-aura);
 }
 
 .domain-card__status--planned {
@@ -1028,7 +1028,7 @@ table { border-collapse: collapse; width: 100%; }
 }
 
 /* Aura intro card */
-.ora-hero {
+.aura-hero {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-8);
@@ -1036,13 +1036,13 @@ table { border-collapse: collapse; width: 100%; }
 }
 
 @media (min-width: 900px) {
-  .ora-hero {
+  .aura-hero {
     grid-template-columns: 1fr 1fr;
     align-items: center;
   }
 }
 
-.ora-hero__visual {
+.aura-hero__visual {
   position: relative;
   display: flex;
   align-items: center;
@@ -1050,7 +1050,7 @@ table { border-collapse: collapse; width: 100%; }
   min-height: 280px;
 }
 
-.ora-brain {
+.aura-brain {
   position: relative;
   width: 200px;
   height: 200px;
@@ -1059,7 +1059,7 @@ table { border-collapse: collapse; width: 100%; }
   justify-content: center;
 }
 
-.ora-brain__core {
+.aura-brain__core {
   width: 80px;
   height: 80px;
   border-radius: 50%;
@@ -1069,46 +1069,46 @@ table { border-collapse: collapse; width: 100%; }
   justify-content: center;
   position: relative;
   z-index: 2;
-  animation: ora-pulse 3s ease-in-out infinite;
+  animation: aura-pulse 3s ease-in-out infinite;
   box-shadow: 0 0 30px var(--color-connectome-glow-strong), 0 0 60px var(--color-connectome-glow);
 }
 
-@keyframes ora-pulse {
+@keyframes aura-pulse {
   0%, 100% { transform: scale(1); box-shadow: 0 0 30px var(--color-connectome-glow-strong), 0 0 60px var(--color-connectome-glow); }
   50% { transform: scale(1.05); box-shadow: 0 0 50px var(--color-connectome-glow-strong), 0 0 100px var(--color-connectome-glow); }
 }
 
-.ora-brain__core-text {
+.aura-brain__core-text {
   font-size: 1.5rem;
   font-weight: 800;
   color: #fff;
   letter-spacing: -0.02em;
 }
 
-.ora-brain__ring {
+.aura-brain__ring {
   position: absolute;
   border-radius: 50%;
   border: 1px solid var(--color-connectome-glow-strong);
-  animation: ora-ring 4s linear infinite;
+  animation: aura-ring 4s linear infinite;
 }
 
-.ora-brain__ring--1 { width: 120px; height: 120px; animation-delay: 0s; }
-.ora-brain__ring--2 { width: 160px; height: 160px; animation-delay: -1s; opacity: 0.6; }
-.ora-brain__ring--3 { width: 200px; height: 200px; animation-delay: -2s; opacity: 0.3; }
+.aura-brain__ring--1 { width: 120px; height: 120px; animation-delay: 0s; }
+.aura-brain__ring--2 { width: 160px; height: 160px; animation-delay: -1s; opacity: 0.6; }
+.aura-brain__ring--3 { width: 200px; height: 200px; animation-delay: -2s; opacity: 0.3; }
 
-@keyframes ora-ring {
+@keyframes aura-ring {
   0% { transform: scale(0.95) rotate(0deg); opacity: 0.5; }
   50% { transform: scale(1.02) rotate(180deg); opacity: 1; }
   100% { transform: scale(0.95) rotate(360deg); opacity: 0.5; }
 }
 
 /* Orbit agents */
-.ora-brain__agents {
+.aura-brain__agents {
   position: absolute;
   inset: -20px;
 }
 
-.ora-agent-dot {
+.aura-agent-dot {
   position: absolute;
   width: 28px;
   height: 28px;
@@ -1126,7 +1126,7 @@ table { border-collapse: collapse; width: 100%; }
   animation: orbit-float 6s ease-in-out infinite;
 }
 
-.ora-agent-dot:hover {
+.aura-agent-dot:hover {
   background: var(--color-connectome-glow-strong);
   border-color: var(--color-connectome);
   transform: scale(1.2);
@@ -1138,32 +1138,32 @@ table { border-collapse: collapse; width: 100%; }
   50% { transform: translateY(-4px); }
 }
 
-.ora-hero__content {
+.aura-hero__content {
   padding: var(--space-2);
 }
 
-.ora-hero__label {
+.aura-hero__label {
   font-size: var(--text-xs);
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: var(--color-ora);
+  color: var(--color-aura);
   margin-bottom: var(--space-3);
   display: flex;
   align-items: center;
   gap: var(--space-2);
 }
 
-.ora-hero__label::before {
+.aura-hero__label::before {
   content: '';
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--color-ora);
+  background: var(--color-aura);
   animation: pulse-dot-gold 2s infinite;
 }
 
-.ora-hero__name {
+.aura-hero__name {
   font-size: var(--text-xl);
   font-weight: 800;
   color: var(--color-text);
@@ -1171,39 +1171,39 @@ table { border-collapse: collapse; width: 100%; }
   margin-bottom: var(--space-4);
 }
 
-.ora-hero__name span {
-  background: linear-gradient(135deg, var(--color-connectome), var(--color-ora));
+.aura-hero__name span {
+  background: linear-gradient(135deg, var(--color-connectome), var(--color-aura));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-.ora-hero__desc {
+.aura-hero__desc {
   font-size: var(--text-base);
   color: var(--color-text-muted);
   line-height: 1.7;
   margin-bottom: var(--space-6);
 }
 
-.ora-stat-row {
+.aura-stat-row {
   display: flex;
   gap: var(--space-6);
   flex-wrap: wrap;
 }
 
-.ora-stat {
+.aura-stat {
   display: flex;
   flex-direction: column;
   gap: var(--space-1);
 }
 
-.ora-stat__num {
+.aura-stat__num {
   font-size: var(--text-xl);
   font-weight: 800;
   color: var(--color-connectome);
 }
 
-.ora-stat__label {
+.aura-stat__label {
   font-size: var(--text-xs);
   color: var(--color-text-muted);
   text-transform: uppercase;
@@ -1247,7 +1247,7 @@ table { border-collapse: collapse; width: 100%; }
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--color-connectome), var(--color-ora));
+  background: linear-gradient(90deg, var(--color-connectome), var(--color-aura));
   opacity: 0;
   transition: opacity var(--transition-interactive);
 }
@@ -1533,7 +1533,7 @@ table { border-collapse: collapse; width: 100%; }
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--color-connectome), var(--color-ora), var(--color-connectome));
+  background: linear-gradient(90deg, var(--color-connectome), var(--color-aura), var(--color-connectome));
 }
 
 .connectome__cta-title {
@@ -1603,7 +1603,7 @@ table { border-collapse: collapse; width: 100%; }
 
 .phase-card__badge--building {
   background: rgba(245, 158, 11, 0.1);
-  color: var(--color-ora);
+  color: var(--color-aura);
   border: 1px solid rgba(245, 158, 11, 0.25);
 }
 
@@ -2093,7 +2093,7 @@ table { border-collapse: collapse; width: 100%; }
   left: 0;
   right: 0;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--color-ora), transparent);
+  background: linear-gradient(90deg, transparent, var(--color-aura), transparent);
 }
 
 .founding-spotlight::after {
@@ -2133,7 +2133,7 @@ table { border-collapse: collapse; width: 100%; }
 .founding-spotlight__title {
   font-size: var(--text-xl);
   font-weight: 800;
-  color: var(--color-ora);
+  color: var(--color-aura);
   letter-spacing: -0.01em;
   margin-bottom: var(--space-2);
 }
@@ -2164,7 +2164,7 @@ table { border-collapse: collapse; width: 100%; }
 .founding-perk__title {
   font-size: var(--text-sm);
   font-weight: 700;
-  color: var(--color-ora);
+  color: var(--color-aura);
   margin-bottom: var(--space-1);
 }
 
@@ -2188,7 +2188,7 @@ table { border-collapse: collapse; width: 100%; }
 .founding-counter__num {
   font-size: var(--text-xl);
   font-weight: 800;
-  color: var(--color-ora);
+  color: var(--color-aura);
 }
 
 .founding-counter__label {
@@ -2517,7 +2517,7 @@ table { border-collapse: collapse; width: 100%; }
   gap: var(--space-1);
 }
 
-.footer__community a:hover { color: var(--color-ora); }
+.footer__community a:hover { color: var(--color-aura); }
 
 .footer__meta {
   display: flex;
@@ -2534,7 +2534,7 @@ table { border-collapse: collapse; width: 100%; }
 .section-sep hr { border: none; height: 1px; background: linear-gradient(90deg, transparent, var(--color-border-bright), transparent); }
 
 /* ========== AURA INTELLIGENCE SECTION ========== */
-.ora-thought-card {
+.aura-thought-card {
   background: linear-gradient(135deg, rgba(0, 212, 170, 0.05), rgba(108, 99, 255, 0.05));
   border: 1px solid rgba(0, 212, 170, 0.2);
   border-radius: 1rem;
@@ -2542,19 +2542,19 @@ table { border-collapse: collapse; width: 100%; }
   max-width: 860px;
   margin: 0 auto;
 }
-.ora-thought-header {
+.aura-thought-header {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 1.25rem;
 }
-.ora-badge {
+.aura-badge {
   font-size: 0.8rem;
   font-weight: 600;
   color: var(--color-accent);
   letter-spacing: 0.05em;
 }
-.ora-category {
+.aura-category {
   font-size: 0.75rem;
   padding: 0.2rem 0.6rem;
   border-radius: 9999px;
@@ -2563,12 +2563,12 @@ table { border-collapse: collapse; width: 100%; }
   text-transform: uppercase;
   letter-spacing: 0.1em;
 }
-.ora-updated {
+.aura-updated {
   font-size: 0.75rem;
   color: var(--color-text-faint);
   margin-left: auto;
 }
-.ora-thought-text {
+.aura-thought-text {
   font-size: 1.1rem;
   line-height: 1.7;
   color: var(--color-text);
@@ -2576,20 +2576,20 @@ table { border-collapse: collapse; width: 100%; }
   margin-bottom: 1.5rem;
   max-width: 100%;
 }
-.ora-pulse-row {
+.aura-pulse-row {
   display: flex;
   align-items: center;
   gap: 0.75rem;
   flex-wrap: wrap;
 }
-.ora-stat {
+.aura-stat {
   font-size: 0.85rem;
   color: var(--color-text-muted);
 }
-.ora-divider {
+.aura-divider {
   color: var(--color-text-faint);
 }
-.ora-momentum {
+.aura-momentum {
   font-size: 0.85rem;
   color: var(--color-accent);
   font-weight: 500;
@@ -2627,7 +2627,7 @@ table { border-collapse: collapse; width: 100%; }
   position: absolute;
   top: 0; left: 0; right: 0;
   height: 2px;
-  background: linear-gradient(90deg, var(--color-connectome), var(--color-ora));
+  background: linear-gradient(90deg, var(--color-connectome), var(--color-aura));
   opacity: 0;
   transition: opacity var(--transition-interactive);
 }
@@ -2691,7 +2691,7 @@ table { border-collapse: collapse; width: 100%; }
   font-weight: 600;
 }
 
-.contribute-cta a:hover { color: var(--color-ora); }
+.contribute-cta a:hover { color: var(--color-aura); }
 
 /* ========== WHATS LIVE SECTION ========== */
 .whats-live-grid {
@@ -2770,7 +2770,7 @@ table { border-collapse: collapse; width: 100%; }
 }
 
 .service-card:hover {
-  border-color: var(--color-ora);
+  border-color: var(--color-aura);
   box-shadow: 0 4px 20px rgba(245, 158, 11, 0.12);
   transform: translateY(-2px);
 }
@@ -2796,7 +2796,7 @@ table { border-collapse: collapse; width: 100%; }
   color: var(--color-text-muted);
 }
 
-.services-meta__item strong { color: var(--color-ora); }
+.services-meta__item strong { color: var(--color-aura); }
 </style>
 </head>
 <body>
@@ -2949,23 +2949,23 @@ table { border-collapse: collapse; width: 100%; }
 <!-- ==================== AURA INTELLIGENCE ==================== -->
 <section class="section" id="aura-intelligence">
   <div class="container">
-    <div class="ora-thought-card reveal">
-      <div class="ora-thought-header">
-        <span class="ora-badge">Aura ✦</span>
-        <span class="ora-category" id="ora-category">thinking</span>
-        <span class="ora-updated" id="ora-updated">live</span>
+    <div class="aura-thought-card reveal">
+      <div class="aura-thought-header">
+        <span class="aura-badge">Aura ✦</span>
+        <span class="aura-category" id="aura-category">thinking</span>
+        <span class="aura-updated" id="aura-updated">live</span>
       </div>
-      <p class="ora-thought-text" id="ora-thought-text">
+      <p class="aura-thought-text" id="aura-thought-text">
         <!-- populated by JS -->
       </p>
-      <div class="ora-pulse-row">
-        <span class="ora-stat" id="ora-contributors">— contributors</span>
-        <span class="ora-divider">·</span>
-        <span class="ora-stat" id="ora-cp">— CP awarded</span>
-        <span class="ora-divider">·</span>
-        <span class="ora-stat" id="ora-stewards">10 Founding Steward spots</span>
-        <span class="ora-divider">·</span>
-        <span class="ora-momentum" id="ora-momentum">● building</span>
+      <div class="aura-pulse-row">
+        <span class="aura-stat" id="aura-contributors">— contributors</span>
+        <span class="aura-divider">·</span>
+        <span class="aura-stat" id="aura-cp">— CP awarded</span>
+        <span class="aura-divider">·</span>
+        <span class="aura-stat" id="aura-stewards">10 Founding Steward spots</span>
+        <span class="aura-divider">·</span>
+        <span class="aura-momentum" id="aura-momentum">● building</span>
       </div>
     </div>
   </div>
@@ -3082,16 +3082,16 @@ table { border-collapse: collapse; width: 100%; }
         </div>
       </div>
       <div class="live-item" style="border-color:rgba(245,158,11,0.25);background:rgba(245,158,11,0.05);">
-        <div class="live-item__dot" style="background:var(--color-ora);"></div>
+        <div class="live-item__dot" style="background:var(--color-aura);"></div>
         <div class="live-item__content">
-          <div class="live-item__title" style="color:var(--color-ora);">Executive Council</div>
+          <div class="live-item__title" style="color:var(--color-aura);">Executive Council</div>
           <div class="live-item__desc">8 AI agents managing the business autonomously: CFO · CMO · CPO · CTO · COO · Community · Strategy · Council</div>
         </div>
       </div>
       <div class="live-item" style="border-color:rgba(245,158,11,0.25);background:rgba(245,158,11,0.05);">
-        <div class="live-item__dot" style="background:var(--color-ora);"></div>
+        <div class="live-item__dot" style="background:var(--color-aura);"></div>
         <div class="live-item__content">
-          <div class="live-item__title" style="color:var(--color-ora);">Founding Steward Path</div>
+          <div class="live-item__title" style="color:var(--color-aura);">Founding Steward Path</div>
           <div class="live-item__desc">First 10 contributors to 3,000 CP earn Founding Steward recognition — real tasks available now</div>
         </div>
       </div>
@@ -3247,48 +3247,48 @@ table { border-collapse: collapse; width: 100%; }
     </div>
 
     <!-- Aura Hero -->
-    <div class="ora-hero reveal">
-      <div class="ora-hero__visual">
-        <div class="ora-brain">
-          <div class="ora-brain__ring ora-brain__ring--3"></div>
-          <div class="ora-brain__ring ora-brain__ring--2"></div>
-          <div class="ora-brain__ring ora-brain__ring--1"></div>
-          <div class="ora-brain__core">
-            <span class="ora-brain__core-text">Aura</span>
+    <div class="aura-hero reveal">
+      <div class="aura-hero__visual">
+        <div class="aura-brain">
+          <div class="aura-brain__ring aura-brain__ring--3"></div>
+          <div class="aura-brain__ring aura-brain__ring--2"></div>
+          <div class="aura-brain__ring aura-brain__ring--1"></div>
+          <div class="aura-brain__core">
+            <span class="aura-brain__core-text">Aura</span>
           </div>
           <!-- Agent dots positioned around the brain -->
-          <div class="ora-brain__agents">
-            <div class="ora-agent-dot" style="top:2%; left:42%; animation-delay:0s;" title="DiscoveryAgent">D</div>
-            <div class="ora-agent-dot" style="top:10%; left:72%; animation-delay:0.5s;" title="CoachingAgent">C</div>
-            <div class="ora-agent-dot" style="top:35%; left:88%; animation-delay:1s;" title="EnlightenmentAgent">E</div>
-            <div class="ora-agent-dot" style="top:65%; left:84%; animation-delay:1.5s;" title="UIGeneratorAgent">UI</div>
-            <div class="ora-agent-dot" style="top:86%; left:65%; animation-delay:2s;" title="WorldAgent">W</div>
-            <div class="ora-agent-dot" style="top:90%; left:38%; animation-delay:0.3s;" title="CollectiveIntelligenceAgent">CI</div>
-            <div class="ora-agent-dot" style="top:82%; left:10%; animation-delay:0.8s;" title="ExploreAgent">Ex</div>
-            <div class="ora-agent-dot" style="top:60%; left:2%; animation-delay:1.3s;" title="FeatureLabAgent">FL</div>
-            <div class="ora-agent-dot" style="top:32%; left:5%; animation-delay:1.8s;" title="FeedbackAnalystAgent">FA</div>
-            <div class="ora-agent-dot" style="top:10%; left:20%; animation-delay:2.3s;" title="RecommendationAgent">R</div>
-            <div class="ora-agent-dot" style="top:0%; left:55%; animation-delay:0.7s;" title="DaoAgent">DAO</div>
+          <div class="aura-brain__agents">
+            <div class="aura-agent-dot" style="top:2%; left:42%; animation-delay:0s;" title="DiscoveryAgent">D</div>
+            <div class="aura-agent-dot" style="top:10%; left:72%; animation-delay:0.5s;" title="CoachingAgent">C</div>
+            <div class="aura-agent-dot" style="top:35%; left:88%; animation-delay:1s;" title="EnlightenmentAgent">E</div>
+            <div class="aura-agent-dot" style="top:65%; left:84%; animation-delay:1.5s;" title="UIGeneratorAgent">UI</div>
+            <div class="aura-agent-dot" style="top:86%; left:65%; animation-delay:2s;" title="WorldAgent">W</div>
+            <div class="aura-agent-dot" style="top:90%; left:38%; animation-delay:0.3s;" title="CollectiveIntelligenceAgent">CI</div>
+            <div class="aura-agent-dot" style="top:82%; left:10%; animation-delay:0.8s;" title="ExploreAgent">Ex</div>
+            <div class="aura-agent-dot" style="top:60%; left:2%; animation-delay:1.3s;" title="FeatureLabAgent">FL</div>
+            <div class="aura-agent-dot" style="top:32%; left:5%; animation-delay:1.8s;" title="FeedbackAnalystAgent">FA</div>
+            <div class="aura-agent-dot" style="top:10%; left:20%; animation-delay:2.3s;" title="RecommendationAgent">R</div>
+            <div class="aura-agent-dot" style="top:0%; left:55%; animation-delay:0.7s;" title="DaoAgent">DAO</div>
           </div>
         </div>
       </div>
 
-      <div class="ora-hero__content">
-        <div class="ora-hero__label">Live &amp; Building</div>
-        <h3 class="ora-hero__name"><span>Aura</span> — Central Intelligence System</h3>
-        <p class="ora-hero__desc">Aura is not a single chatbot — it is an orchestrated network of specialised agents and memory systems. Together they power server-driven interfaces, personalised recommendations, path mapping, impact measurement, and DAO workflows — continuously learning from real use.</p>
-        <div class="ora-stat-row">
-          <div class="ora-stat">
-            <span class="ora-stat__num">60</span>
-            <span class="ora-stat__label">Agents + Automations</span>
+      <div class="aura-hero__content">
+        <div class="aura-hero__label">Live &amp; Building</div>
+        <h3 class="aura-hero__name"><span>Aura</span> — Central Intelligence System</h3>
+        <p class="aura-hero__desc">Aura is not a single chatbot — it is an orchestrated network of specialised agents and memory systems. Together they power server-driven interfaces, personalised recommendations, path mapping, impact measurement, and DAO workflows — continuously learning from real use.</p>
+        <div class="aura-stat-row">
+          <div class="aura-stat">
+            <span class="aura-stat__num">60</span>
+            <span class="aura-stat__label">Agents + Automations</span>
           </div>
-          <div class="ora-stat">
-            <span class="ora-stat__num">3</span>
-            <span class="ora-stat__label">Life Domains</span>
+          <div class="aura-stat">
+            <span class="aura-stat__num">3</span>
+            <span class="aura-stat__label">Life Domains</span>
           </div>
-          <div class="ora-stat">
-            <span class="ora-stat__num">∞</span>
-            <span class="ora-stat__label">Screen Variants</span>
+          <div class="aura-stat">
+            <span class="aura-stat__num">∞</span>
+            <span class="aura-stat__label">Screen Variants</span>
           </div>
         </div>
       </div>
@@ -3464,7 +3464,7 @@ table { border-collapse: collapse; width: 100%; }
       <div style="background:rgba(245,158,11,0.06);border:1px solid rgba(245,158,11,0.18);border-radius:20px;padding:var(--space-6);">
         <div style="font-size:2.5rem;margin-bottom:var(--space-3);">⚡</div>
         <h3 style="font-size:var(--text-lg);font-weight:700;margin-bottom:var(--space-3);">CP Compounds Forever</h3>
-        <p style="color:var(--color-text-muted);font-size:var(--text-sm);line-height:1.7;">Aura re-evaluates your impact every month. The longer you’re here, the more your contributions are worth — up to <strong style="color:var(--color-ora);">1.5× multiplier</strong> at 12 months. Early users have an unfair advantage. On purpose.</p>
+        <p style="color:var(--color-text-muted);font-size:var(--text-sm);line-height:1.7;">Aura re-evaluates your impact every month. The longer you’re here, the more your contributions are worth — up to <strong style="color:var(--color-aura);">1.5× multiplier</strong> at 12 months. Early users have an unfair advantage. On purpose.</p>
       </div>
     </div>
 
@@ -3482,8 +3482,8 @@ table { border-collapse: collapse; width: 100%; }
             <tr><td>🎯 Goal completion</td><td style="color:#00d4aa;font-weight:700;">+10 CP</td><td>Monthly, via Aura evaluation</td></tr>
             <tr><td>📓 Journal entry</td><td style="color:#00d4aa;font-weight:700;">+3 CP</td><td>Trains Aura's coaching model</td></tr>
             <tr><td>📅 30-day streak</td><td style="color:#00d4aa;font-weight:700;">+50 CP</td><td>Longevity bonus</td></tr>
-            <tr><td>⏳ 6-month longevity</td><td style="color:var(--color-ora);font-weight:700;">1.25× multiplier</td><td>Applied to all future CP</td></tr>
-            <tr><td>⏳ 12-month longevity</td><td style="color:var(--color-ora);font-weight:700;">1.5× multiplier</td><td>Maximum multiplier, locked in</td></tr>
+            <tr><td>⏳ 6-month longevity</td><td style="color:var(--color-aura);font-weight:700;">1.25× multiplier</td><td>Applied to all future CP</td></tr>
+            <tr><td>⏳ 12-month longevity</td><td style="color:var(--color-aura);font-weight:700;">1.5× multiplier</td><td>Maximum multiplier, locked in</td></tr>
           </tbody>
         </table>
       </div>
@@ -3634,7 +3634,7 @@ table { border-collapse: collapse; width: 100%; }
       <div class="tier-card" style="--tier-color:#3b82f6;"><div class="tier-card__top"><span class="tier-card__emoji">🔵</span><div><div class="tier-card__name">Contributor</div><div class="tier-card__cp" style="color:#3b82f6;">100+ CP</div></div></div><div class="tier-card__divider"></div><ul class="tier-card__perks"><li>Vote on all A/B tests</li><li>Submit feedback to Aura</li><li>Gasless voting via Snapshot</li><li>Contributor recognition badge</li></ul></div>
       <div class="tier-card" style="--tier-color:var(--color-eviva);"><div class="tier-card__top"><span class="tier-card__emoji">🟣</span><div><div class="tier-card__name">Builder</div><div class="tier-card__cp" style="color:var(--color-eviva);">500+ CP</div></div></div><div class="tier-card__divider"></div><ul class="tier-card__perks"><li>Submit new proposals</li><li>Direct Aura's priorities</li><li>Access dev environment</li><li>DAO funding consideration eligible</li></ul></div>
       <div class="tier-card" style="--tier-color:var(--color-accent);"><div class="tier-card__top"><span class="tier-card__emoji">🟡</span><div><div class="tier-card__name">Steward</div><div class="tier-card__cp" style="color:var(--color-accent);">3,000+ CP</div></div></div><div class="tier-card__divider"></div><ul class="tier-card__perks"><li>Governance escalation participation</li><li>Transparent budget oversight</li><li>Strategic planning sessions</li><li>Govern Ascension direction</li></ul></div>
-      <div class="tier-card" style="--tier-color:var(--color-ora);background:linear-gradient(135deg,var(--color-surface),rgba(245,158,11,0.05));border-color:rgba(245,158,11,0.3);"><div class="tier-card__top"><span class="tier-card__emoji">⚡</span><div><div class="tier-card__name">Founding Steward</div><div class="tier-card__cp" style="color:var(--color-ora);">First 10 to Steward</div></div></div><div class="tier-card__divider"></div><ul class="tier-card__perks"><li>Permanent recognition in DAO history</li><li>Founding governance participation</li><li>Shape Ascension Technologies direction</li><li>Early access to Aura features</li><li style="color:var(--color-ora);font-weight:600;">⚡ 10 spots total, ever</li></ul></div>
+      <div class="tier-card" style="--tier-color:var(--color-aura);background:linear-gradient(135deg,var(--color-surface),rgba(245,158,11,0.05));border-color:rgba(245,158,11,0.3);"><div class="tier-card__top"><span class="tier-card__emoji">⚡</span><div><div class="tier-card__name">Founding Steward</div><div class="tier-card__cp" style="color:var(--color-aura);">First 10 to Steward</div></div></div><div class="tier-card__divider"></div><ul class="tier-card__perks"><li>Permanent recognition in DAO history</li><li>Founding governance participation</li><li>Shape Ascension Technologies direction</li><li>Early access to Aura features</li><li style="color:var(--color-aura);font-weight:600;">⚡ 10 spots total, ever</li></ul></div>
     </div>
 
     <div class="founding-spotlight reveal">
@@ -3962,9 +3962,9 @@ table { border-collapse: collapse; width: 100%; }
   };
 
   function showThought(thought) {
-    const el = document.getElementById('ora-thought-text');
-    const cat = document.getElementById('ora-category');
-    const updated = document.getElementById('ora-updated');
+    const el = document.getElementById('aura-thought-text');
+    const cat = document.getElementById('aura-category');
+    const updated = document.getElementById('aura-updated');
     if (!el) return;
     el.style.opacity = '0';
     setTimeout(function() {
@@ -3990,7 +3990,7 @@ table { border-collapse: collapse; width: 100%; }
 
   async function fetchAuraThought() {
     try {
-      const res = await fetch('https://api.atdao.org/api/public/dao/ora-thought', { signal: AbortSignal.timeout(3000) });
+      const res = await fetch('https://api.atdao.org/api/public/dao/aura-thought', { signal: AbortSignal.timeout(3000) });
       if (!res.ok) return null;
       return await res.json();
     } catch { return null; }
@@ -3998,10 +3998,10 @@ table { border-collapse: collapse; width: 100%; }
 
   function updatePulseUI(pulse) {
     if (!pulse) return;
-    const contrib = document.getElementById('ora-contributors');
-    const cp = document.getElementById('ora-cp');
-    const stewards = document.getElementById('ora-stewards');
-    const momentum = document.getElementById('ora-momentum');
+    const contrib = document.getElementById('aura-contributors');
+    const cp = document.getElementById('aura-cp');
+    const stewards = document.getElementById('aura-stewards');
+    const momentum = document.getElementById('aura-momentum');
     if (contrib) contrib.textContent = pulse.contributors_total + ' contributors';
     if (cp) cp.textContent = pulse.cp_awarded_total.toLocaleString() + ' CP awarded';
     if (stewards) stewards.textContent = pulse.founding_stewards_remaining + ' Founding Steward spots';
