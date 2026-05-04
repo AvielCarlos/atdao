@@ -19,7 +19,7 @@ A major content and feature upgrade that preserves the entire existing design sy
 **Before:** `Vision | Domains | How It Works | Governance | Membership | For AI | Directive | Docs`  
 **After:** `Domains | Ora | Roadmap | How It Works | Contribute | Governance | Directive | Community ↗ (Telegram)`
 
-- Added "Ora" nav link → `#connectome`
+- Added "Aura" nav link → `#connectome`
 - Added "Contribute" nav link → `#contributions`
 - Renamed "Vision" → "Roadmap" (clearer naming)
 - Added "Community ↗" link directly to `t.me/ascensiontechai` with distinct purple color
@@ -77,7 +77,7 @@ Updated domains subtitle to reference Ora as the powering layer.
 New full section between Domains and Roadmap (`id="connectome"`):
 
 **Ora Hero Panel:**
-- Animated brain visual with pulsing core labeled "Ora"
+- Animated brain visual with pulsing core labeled "Aura"
 - 3 concentric animated rings
 - 11 orbiting agent dots (interactive hover tooltips)
 - Stats: 11 agents, 3 domains, ∞ screen variants
